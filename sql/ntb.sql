@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2016 at 04:12 PM
+-- Generation Time: Oct 21, 2016 at 06:13 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -128,15 +128,19 @@ CREATE TABLE IF NOT EXISTS `m_pegawai` (
   `pegawai_tmt_pns` date NOT NULL,
   `pegawai_gol_cpns` int(2) NOT NULL,
   `pegawai_gol_pns` int(2) NOT NULL,
-  `pegawai_nik` bigint(16) NOT NULL
+  `pegawai_unit` int(5) NOT NULL,
+  `pegawai_dibuat_oleh` bigint(18) NOT NULL,
+  `pegawai_dibuat_waktu` datetime NOT NULL,
+  `pegawai_diupdate_oleh` bigint(18) NOT NULL,
+  `pegawai_diupdate_waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `m_pegawai`
 --
 
-INSERT INTO `m_pegawai` (`pegawai_nip`, `pegawai_nama`, `pegawai_nama_panggilan`, `pegawai_gelar_depan`, `pegawai_gelar_blkg`, `pegawai_nip_lama`, `pegawai_agama`, `pegawai_jk`, `pegawai_tempat_lahir`, `pegawai_tgl_lahir`, `pegawai_tmt_cpns`, `pegawai_tmt_pns`, `pegawai_gol_cpns`, `pegawai_gol_pns`, `pegawai_nik`) VALUES
-(198203192004121002, 'I PUTU DYATMIKA', 'MIKA', '', 'S.ST', 340017401, 4, 1, 'MATARAM', '1982-03-19', '2004-12-01', '2005-12-01', 31, 34, 5272031903820005);
+INSERT INTO `m_pegawai` (`pegawai_nip`, `pegawai_nama`, `pegawai_nama_panggilan`, `pegawai_gelar_depan`, `pegawai_gelar_blkg`, `pegawai_nip_lama`, `pegawai_agama`, `pegawai_jk`, `pegawai_tempat_lahir`, `pegawai_tgl_lahir`, `pegawai_tmt_cpns`, `pegawai_tmt_pns`, `pegawai_gol_cpns`, `pegawai_gol_pns`, `pegawai_unit`, `pegawai_dibuat_oleh`, `pegawai_dibuat_waktu`, `pegawai_diupdate_oleh`, `pegawai_diupdate_waktu`) VALUES
+(198203192004121002, 'I PUTU DYATMIKA', 'MIKA', '', 'S.ST', 340017401, 4, 1, 'MATARAM', '1982-03-19', '2004-12-01', '2005-12-01', 31, 34, 52563, 999999999, '2016-10-12 14:14:17', 99999999, '2016-10-20 17:34:01');
 
 -- --------------------------------------------------------
 
@@ -260,16 +264,22 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_unit` int(5) NOT NULL,
   `user_level` int(2) NOT NULL,
   `user_lastlogin` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `user_ip` varchar(30) NOT NULL
+  `user_ip` varchar(30) NOT NULL,
+  `user_dibuat_oleh` bigint(18) NOT NULL,
+  `user_dibuat_waktu` datetime NOT NULL,
+  `user_diupdate_oleh` bigint(18) NOT NULL,
+  `user_diupdate_waktu` datetime NOT NULL,
+  `user_status` int(1) NOT NULL,
+  `user_kode_aktivasi` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_nip`, `user_id`, `user_nama`, `user_passwd`, `user_unit`, `user_level`, `user_lastlogin`, `user_ip`) VALUES
-(99999999999, 'admin', 'Super Administrator', 'admin', 99999, 99, '2016-10-20 08:19:22', '10.52.6.31'),
-(198203192004121002, 'mika', 'I Putu Dyatmika', 'mika', 99999, 999, '2016-10-20 12:38:35', '::1');
+INSERT INTO `users` (`user_nip`, `user_id`, `user_nama`, `user_passwd`, `user_unit`, `user_level`, `user_lastlogin`, `user_ip`, `user_dibuat_oleh`, `user_dibuat_waktu`, `user_diupdate_oleh`, `user_diupdate_waktu`, `user_status`, `user_kode_aktivasi`) VALUES
+(99999999999, 'admin', 'Super Administrator', 'admin', 52000, 99, '2016-10-21 03:04:40', '::1', 99999999999, '2016-10-19 11:37:37', 198203192004121002, '2016-10-21 01:11:19', 1, ''),
+(198203192004121002, 'mika', 'I Putu Dyatmika', 'mika', 52560, 99, '2016-10-20 17:12:23', '::1', 198203192004121002, '2016-10-21 01:11:54', 99999999999, '2016-10-21 01:11:54', 1, '');
 
 --
 -- Indexes for dumped tables

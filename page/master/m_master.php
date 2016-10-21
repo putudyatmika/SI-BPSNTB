@@ -13,7 +13,7 @@
 		include 'page/master/settings/m_settings.php';
 	}
 	elseif ($act=="pegawai") {
-		
+		include 'page/master/pegawai/m_pegawai.php';
 	}
 	elseif ($act=="unitkerja") {
 		include 'page/master/unitkerja/m_unitkerja.php';

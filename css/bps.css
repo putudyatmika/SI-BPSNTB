@@ -1,4 +1,42 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);*/
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url('../addons/fonts/gotham-book.eot');
+    src: url('../addons/fonts/gotham-book.eot') format('embedded-opentype'),
+         url('../addons/fonts/gotham-book.woff') format('woff'),
+         url('../addons/fonts/gotham-book.ttf') format('truetype'),
+         url('../addons/fonts/gotham-book.svg#GothamBook') format('svg');
+}
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url('../addons/fonts/gotham-bold.eot');
+    src: url('../addons/fonts/gotham-bold.eot') format('embedded-opentype'),
+         url('../addons/fonts/gotham-bold.woff') format('woff'),
+         url('../addons/fonts/gotham-bold.ttf') format('truetype'),
+         url('../addons/fonts/gotham-bold.svg#GothamBold') format('svg');
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../addons/OpenSans/OpenSans-Regular.ttf');
+    src: url('../addons/OpenSans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../addons/OpenSans/OpenSans-Bold.ttf');
+    src: url('../addons/OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../addons/Roboto/Roboto-Bold.ttf');
+    src: url('../addons/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../addons/Roboto/Roboto-Regular.ttf');
+    src: url('../addons/Roboto/Roboto-Regular.ttf') format('truetype');
+}
 body {
   font-family: 'Roboto', Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
