@@ -65,7 +65,7 @@ $r = $sql_users ->fetch_object();
 						<?php
 						$db_unit = new db();
 						$conn_unit = $db_unit -> connect();
-						$sql_unit = $conn_unit->query("select * from m_unitkerja where SUBSTRING(unit_kode,5,1)=0 order by unit_jenis,unit_kode asc");
+						$sql_unit = $conn_unit->query("select * from m_unitkerja order by unit_jenis,unit_kode asc");
 						$pilih='';
 						while ($t = $sql_unit ->fetch_object()) {
 							if ($t->unit_kode==$r->user_unit) $pilih='selected="selected"';

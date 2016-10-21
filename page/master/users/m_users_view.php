@@ -12,7 +12,7 @@ $dibuat_tgl=tgl_convert_waktu(1,$r->user_dibuat_waktu);
 $diupdate_tgl=tgl_convert_waktu(1,$r->user_diupdate_waktu);
 ?>
 <div class="col-lg-12 col-sm-12">
-<legend>Unit Kerja Detil</legend>
+<legend>User <strong><?php echo $r->user_id;?></strong> Detil</legend>
 <div class="alert alert-info" role="alert">
 		<dl class="dl-horizontal">
 			<dt>NIP</dt>
