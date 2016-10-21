@@ -40,14 +40,45 @@
            $('#tanggal').datepicker()
     .on("changeDate", function(e){
 
-      $('#birthday').prop('readonly',false);
-      $('#birthday').val(e.format('yyyy-mm-dd'));
-      $('#birthday').prop('readonly',true);
+      $('#pegawai_tgl_lahir').prop('readonly',false);
+      $('#pegawai_tgl_lahir').val(e.format('yyyy-mm-dd'));
+      $('#pegawai_tgl_lahir').prop('readonly',true);
 
   });
   
 });
+	$(document).ready(function() {
+          $('#tgl_cpns').datepicker({
+       format: "yyyy-mm-dd", 
+	   autoclose: true
+  });
+  
+           $('#tgl_cpns').datepicker()
+    .on("changeDate", function(e){
 
+      $('#pegawai_tmt_cpns').prop('readonly',false);
+      $('#pegawai_tmt_cpns').val(e.format('yyyy-mm-dd'));
+      $('#pegawai_tmt_cpns').prop('readonly',true);
+
+  });
+  
+});
+$(document).ready(function() {
+          $('#tgl_pns').datepicker({
+       format: "yyyy-mm-dd", 
+	   autoclose: true
+  });
+  
+           $('#tgl_pns').datepicker()
+    .on("changeDate", function(e){
+
+      $('#pegawai_tmt_pns').prop('readonly',false);
+      $('#pegawai_tmt_pns').val(e.format('yyyy-mm-dd'));
+      $('#pegawai_tmt_pns').prop('readonly',true);
+
+  });
+  
+});
 	</script>
 	
 	
