@@ -21,4 +21,6 @@ $user_level=array(1=>'Pegawai',10=>'Eselon IV',30=>'Eselon III',40=>'Eselon II',
 $status_umum=array(0=>'Tidak Aktif',1=>'Aktif');
 $JenisKelamin=array(1=>'Laki-Laki',2=>'Perempuan');
 $JenisUnit=array(1=>'Provinsi',2=>'Kabupaten');
+$statusPNS=array(1=>'CPNS',2=>'PNS');
+$jabatanPegawai=array(1=>'Kepala',2=>'Staf',3=>'KSK',4=>'Peltu');
 ?>

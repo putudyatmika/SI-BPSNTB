@@ -6,14 +6,14 @@ $cek= $sql_users -> num_rows;
 if ($cek > 0) {
 ?>
 <div class="table-responsive">
-<table class="table table-bordered table-hover">
+<table class="table table-hover table-striped table-condensed">
 	<tr>
-	<th width="15%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">NIP</th>
-	<th width="25%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">User ID</th>
-	<th width="30%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Lastlogin</th>
-	<th width="10%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Last IP</th>
-	<th width="10%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Status</th>
-	<th width="10%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;" colspan="3">&nbsp;</th>
+	<th>NIP</th>
+	<th>User ID</th>
+	<th>Lastlogin</th>
+	<th>Last IP</th>
+	<th>Status</th>
+	<th colspan="3">&nbsp;</th>
 	</tr>
 	<?php
 	 while ($r=$sql_users->fetch_object()) {

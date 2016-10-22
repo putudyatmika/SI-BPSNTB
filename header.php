@@ -7,8 +7,8 @@
 	<meta name="author" content="Bli Mika - I Putu Dyatmika <pdyatmika@gmail.com>">
 	<meta name="language" content="id,en" />
    <link rel="shortcut icon" href="<?php echo $bps_url->getSetting(); ?>/img/bps.ico">
-   
-   <title>BPS Provinsi NTB</title>
+
+   <title>Sistem Informasi BPS Provinsi NTB (SI-BPSNTB)</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/normalize.css" rel="stylesheet">-->
@@ -19,7 +19,7 @@
 	<link href="<?php echo $bps_url->getSetting(); ?>/css/animate.css" rel="stylesheet" media="screen">
 	<link href="<?php echo $bps_url->getSetting(); ?>/css/bps.css" rel="stylesheet" media="screen">
 	<link href="<?php echo $bps_url->getSetting(); ?>/addons/datepicker/css/datepicker3.css" rel="stylesheet">
-	
+
 </head>
 
 <body>
@@ -30,7 +30,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="<?php echo $bps_url->getSetting(); ?>"><img src="<?php echo $bps_url->getSetting(); ?>/images/logo.png" class="img-responsive" /></a>
     </div>

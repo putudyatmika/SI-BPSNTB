@@ -37,12 +37,12 @@
     src: url('../addons/Roboto/Roboto-Regular.ttf');
     src: url('../addons/Roboto/Roboto-Regular.ttf') format('truetype');
 }
+
 body {
   font-family: 'Roboto', Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
-  color: #333333;  
- 
+  color: #333333;
 }
 .navbar {
     margin-bottom: 0;
@@ -51,7 +51,7 @@ body {
     border: 0;
     font-size: 13px !important;
     line-height: 1.42857143 !important;
-    
+
     border-radius: 0;
 }
 .konten {
@@ -75,10 +75,10 @@ body {
    margin: 0 auto;
    /* probably not needed anymore, but doesn't hurt */
    -o-object-fit: contain;
-   object-fit: contain; 
+   object-fit: contain;
 
 }
-.jumbotron { 
+.jumbotron {
     background-color: #494542; /* Orange */
     color: #ffffff;
 }
@@ -98,42 +98,7 @@ body {
     height: 100%;
     margin-bottom: 10px;
 }
-.rooms {
-	margin-top: 50px;
-}
-.bg-standard {
-	background-color: #cfe58c;
-}
-.bg-superior {
-	background-color: #eedca1;
-}
-.bg-deluxe {
-	background-color: #f7c278;
-}
-.standard {
-	background: #a3c149;
-	margin:0px;
-	border: none;
-	border-radius: 0px;
-	font-weight: bold;
-	color: #6f163b;
-}
-.superior {
-	background: #f1ca4d;
-	margin:0px;
-	border: none;
-	border-radius: 0px;
-	font-weight: bold;
-	color: #6f163b;
-}
-.deluxe {
-	background: #ed951c;
-	margin:0px;
-	border: none;
-	border-radius: 0px;
-	font-weight: bold;
-	color: #6f163b;
-}
+
 .list-unstyled {
 	padding: 10px;
 }
@@ -156,7 +121,7 @@ body {
 #back-top a:hover {
 	background-color:rgba(0,0,0,0.7)
 	}
-#back-top a i { 
+#back-top a i {
 	font-size:1.1em
 	}
 
@@ -168,9 +133,10 @@ body {
 	background-color: #494542;
 }
 .utama {
- position: relatif;
+ position: relative;
  margin-top: 10px;
  margin-bottom: 10px;
+
 }
 #footer {
 	background-color:#333;
@@ -190,40 +156,4 @@ body {
 	margin:0px;
 	padding: 3px;
 	line-height:100%;
-}
-.soc-footer {
-    margin-top: 10px;
-}
- 
-.soc-footer li {
-    list-style-type: none;
-    float: left;
-}
- 
-.soc-footer li a i {
-    background: #205D7A;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    font-size: 25px;
-    text-align: center;
-    margin-right: 10px;
-    padding-top: 15%;
-    transition: all 0.2s ease-in-out;
-}
-.soc-footer .fb-warna {
-	background:#3b5998;
-} 
-.soc-footer .fa-linkedin {
-	background:#007bb6;
-}
-.soc-footer .twitter-warna {
-	background:#00aced;
-}
-.soc-footer .ig-warna {
-	background:#ed951c;
-}
-.soc-footer li a i:hover {
-    opacity: .7;
 }

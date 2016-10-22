@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row konten">
-		<div class="col-lg-9 col-sm-9">
+		<div class="col-lg-10 col-sm-10">
 		
 		<div class="row">
 		
@@ -30,7 +30,7 @@
 ?>
 		</div>
 		</div>
-		<div class="col-lg-3 col-sm-3">
+		<div class="col-lg-2 col-sm-2">
 		
 			<div class="list-group">
 			<a href="#" class="list-group-item active"><i class="fa fa-cubes fa-fw"></i>&nbsp; Master Data</a>

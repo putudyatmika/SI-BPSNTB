@@ -8,12 +8,12 @@
 	<meta name="language" content="id,en" />
     <link rel="shortcut icon" href="<?php echo $bps_url->getSetting(); ?>/images/bps.ico">
 
-    <title>Sistem BPS Provinsi NTB</title>
+    <title>Sistem Infomasi BPS Provinsi NTB (SI-BPSNTB)</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/normalize.css" rel="stylesheet">-->
 	<link href="<?php echo $bps_url->getSetting(); ?>/addons/bootstrap/css/bootstrap.css" rel="stylesheet">
-	
+
     <!-- Add custom CSS here -->
     <link href="<?php echo $bps_url->getSetting(); ?>/addons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="<?php echo $bps_url->getSetting(); ?>/css/animate.css" rel="stylesheet" media="screen">
@@ -135,12 +135,12 @@ h2 {
   to {
     filter: hue-rotate(-360deg);
   }
-} 
+}
 </style>
 </head>
 
 <body>
-	
+
 <div class="container">
     <?php
 		$login_ku="";
@@ -151,7 +151,7 @@ h2 {
 				$db = new db();
 				$conn = $db->connect();
 				$sql_cek = $conn -> query("select * from users where user_id='$user_id' and user_passwd='$passwd'");
-				
+
 				//$sql_cek=mysql_query("select * from users where user_id='$user_id' and user_passwd='$passwd'");
 				//$cek=mysql_num_rows($sql_cek);
 				$cek = $sql_cek -> num_rows;
@@ -160,7 +160,7 @@ h2 {
 					$r=$sql_cek->fetch_object();
 					$_SESSION['sesi_user_id']=$user_id;
 					$_SESSION['sesi_user_nip']=$r->user_nip;
-					$_SESSION['sesi_passwd']=$passwd;	
+					$_SESSION['sesi_passwd']=$passwd;
 					$_SESSION['sesi_nama']=$r->user_nama;
 					$_SESSION['sesi_level']=$r->user_level;
 					$login_ku="sukses";
@@ -173,8 +173,8 @@ h2 {
 					$login_ku="";
 				}
 				$conn->close();
-				
-	
+
+
 }
 	?>
 	<div class="row colored">
@@ -189,22 +189,22 @@ h2 {
                 <button type="submit" name="submit" id="submit" class="btn btn-sm wide colored">
                     <i class="fa fa-lock medicon"></i> </button>
 				</form>
-				<?php } 
+				<?php }
 				?>
             </div>
         </div>
     </div>
-	
+
 	<div class="row">
 		<?php if ($text_alert!="") { ?><div class="col-sm-offset-3 col-sm-6"><div class="alert alert-danger text-center" role="alert"><?php echo $text_alert; ?></div></div><?php } ?>
-		
+
 	</div>
 </div>
 
 <!-- JavaScript -->
     <script src="<?php echo $bps_url->getSetting(); ?>/js/jquery-1.11.1.min.js"></script>
     <script src="<?php echo $bps_url->getSetting(); ?>/addons/bootstrap/js/bootstrap.min.js"></script>
-		
+
 </body>
 <?php //tutup_db($con); ?>
-</html>    
+</html>
