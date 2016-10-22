@@ -1,11 +1,10 @@
 <div class="col-lg-12 col-sm-12">
 		<div class="btn-toolbar" role="toolbar">
 			<div class="btn-group">
-				
-				<a href="<?php echo $url; ?>/master/pegawai/add/" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Tambah Pegawai</a>
-				<a href="<?php echo $url; ?>/master/pegawai/" class="btn btn-success"><span class="glyphicon glyphicon-th"></span> List Pegawai</a>
-				<a href="<?php echo $url; ?>/master/pegawai/agama/" class="btn btn-danger"><span class="glyphicon glyphicon-th"></span> Agama</a>
-				<a href="<?php echo $url; ?>/master/pegawai/gol/" class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Pangkat/Gol</a>
+				<a href="<?php echo $url; ?>/master/pegawai/add/" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Tambah</a>
+				<a href="<?php echo $url; ?>/master/pegawai/" class="btn btn-success"><span class="glyphicon glyphicon-th"></span> Semua</a>
+				<a href="<?php echo $url; ?>/master/pegawai/provinsi/" class="btn btn-danger"><span class="glyphicon glyphicon-th"></span> Provinsi</a>
+				<a href="<?php echo $url; ?>/master/pegawai/kabupaten/" class="btn btn-info"><span class="glyphicon glyphicon-education"></span> Kabupaten</a>
 			</div>
 		</div>
 </div>
@@ -30,8 +29,11 @@
 			elseif ($lvl3=='delete') {
 				include 'page/master/pegawai/m_pegawai_delete.php';
 			}
+			elseif ($lvl3=='provinsi') {
+				include 'page/master/pegawai/m_pegawai_provinsi.php';
+			}
 			else {
 				include 'page/master/pegawai/m_pegawai_list.php';
 			}
 		?>
-</div>	
+</div>

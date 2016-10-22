@@ -2,7 +2,7 @@
 
     // hide #back-top first
     $("#back-top").hide();
-    
+
     // fade in #back-top
     $(function () {
         $(window).scroll(function () {
@@ -29,7 +29,7 @@ $(document).ready(function() {
 		var href = $(this).attr('href');
 		if (!$('#dataConfirmModal').length) {
 			$('body').append('<div id="dataConfirmModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dataConfirmModal" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="dataConfirmLabel">Konfirmasi</h3></div><div class="modal-body"></div><div class="modal-footer"><button class="btn btn-success" data-dismiss="modal" aria-hidden="true">close</button><a class="btn btn-danger" id="dataConfirmOK"><span class="glyphicon glyphicon-trash"></span> hapus</a></div></div></div></div>');
-		} 
+		}
 		$('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm'));
 		$('#dataConfirmOK').attr('href', href);
 		$('#dataConfirmModal').modal({show:true});
@@ -42,7 +42,7 @@ $(document).ready(function() {
 		ev.preventDefault();
 		if (!$('#dataConfirmModal').length) {
 			$('body').append('<div id="dataConfirmModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dataConfirmModal" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="dataConfirmLabel">Konfirmasi</h3></div><div class="modal-body"></div><div class="modal-footer"><button class="btn btn-success" data-dismiss="modal" aria-hidden="true">close</button><a class="btn btn-danger" id="dataConfirmOK"><span class="glyphicon glyphicon-trash"></span> submit</a></div></div></div></div>');
-		} 
+		}
 		$('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm'));
 		$('#dataConfirmOK').click(function() {
 				$('formProduk').serialize(),
@@ -54,18 +54,18 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    $('#pilihsemua').click(function(event) {  //on click 
+    $('#pilihsemua').click(function(event) {  //on click
         if(this.checked) { // check select status
             $('.pilih').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox1"               
+                this.checked = true;  //select all checkboxes with class "checkbox1"
             });
         }else{
             $('.pilih').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox1"
+            });
         }
     });
-    
+
 });
 
 $(document).ready(function() {
@@ -171,7 +171,7 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Silakan pilih jenis unit'
-                    }					
+                    }
                 }
             }
         }
@@ -219,9 +219,9 @@ $(document).ready(function() {
                         message: 'Silakan isikan nama panggilan'
                     },
                     stringLength: {
-                        min: 4,
+                        min: 3,
                         max: 15,
-                        message: 'minimal 4 huruf'
+                        message: 'minimal 3 huruf'
                     }
                 }
             },
@@ -244,14 +244,14 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Silakan pilih agama'
-                    }					
+                    }
                 }
             },
 			pegawai_jk: {
                 validators: {
                     notEmpty: {
                         message: 'Silakan pilih jenis kelamin'
-                    }					
+                    }
                 }
             },
 			pegawai_tempat_lahir: {
@@ -266,12 +266,51 @@ $(document).ready(function() {
                     }
                 }
             },
+      pegawai_tgl_lahir: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan isi tgl lahir'
+                      },
+                      date: {
+                       format: 'YYYY-MM-DD',
+                       message: 'format YYYY-MM-DD'
+                   }
+                      }
+                },
+      pegawai_gol_cpns: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih gol cpns'
+                          }
+                      }
+                },
+      pegawai_gol_pns: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih gol terakhir'
+                          }
+                      }
+                },
 			pegawai_unit: {
                 validators: {
                     notEmpty: {
-                        message: 'Silakan pilih jenis unit kerj'
-                    }					
+                        message: 'Silakan pilih jenis unit kerja'
+                    }
                 }
+            },
+      pegawai_jabatan: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih jabatan terakhir'
+                          }
+                      }
+                },
+      pegawai_status: {
+            validators: {
+                notEmpty: {
+                    message: 'Silakan pilih status pegawai'
+                      }
+                  }
             }
         }
     });
@@ -286,7 +325,7 @@ $(document).ready(function() {
         },
         fields: {
             users_passwd: {
-				
+
                 validators: {
                     notEmpty: {
                         message: 'isian ini tidak boleh kosong'
@@ -294,7 +333,7 @@ $(document).ready(function() {
                 }
             },
 			users_passwd_baru: {
-			
+
                 validators: {
                     notEmpty: {
                         message: 'isian ini tidak boleh kosong'
@@ -333,7 +372,7 @@ $(document).ready(function() {
         },
         fields: {
             users_id: {
-				
+
                 validators: {
                     notEmpty: {
                         message: 'isian ini tidak boleh kosong'
@@ -346,7 +385,7 @@ $(document).ready(function() {
                 }
             },
 			users_passwd: {
-			
+
                 validators: {
                     notEmpty: {
                         message: 'isian ini tidak boleh kosong'
@@ -373,7 +412,7 @@ $(document).ready(function() {
 				}
             },
 			users_nama: {
-				
+
                 validators: {
                     notEmpty: {
                         message: 'isian ini tidak boleh kosong'
@@ -386,7 +425,7 @@ $(document).ready(function() {
                 }
             },
 			users_level: {
-				
+
                 validators: {
                     notEmpty: {
                         message: 'silakan dipilih'
@@ -394,7 +433,7 @@ $(document).ready(function() {
                 }
             },
 			users_status: {
-				
+
                 validators: {
                     notEmpty: {
                         message: 'silakan dipilih'

@@ -6,13 +6,13 @@ $cek= $sql_unitkerja -> num_rows;
 if ($cek > 0) {
 ?>
 <div class="table-responsive">
-<table class="table table-bordered table-hover">
+<table class="table table-hover table-striped table-condensed">
 	<tr>
-	<th width="5%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Kode</th>
-	<th width="45%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Nama Unit</th>
-	<th width="30%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Parent</th>
-	<th width="10%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;">Jenis</th>
-	<th width="10%" style="padding:20px 5px 20px 5px;text-align:center;background-color:#eaeaea;" colspan="3">&nbsp;</th>
+	<th>Kode</th>
+	<th>Nama Unit</th>
+	<th>Parent</th>
+	<th>Jenis</th>
+	<th colspan="3">Aksi</th>
 	</tr>
 	<?php
 	while ($r = $sql_unitkerja ->fetch_object()) {
