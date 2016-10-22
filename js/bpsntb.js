@@ -178,6 +178,105 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
+    $('#formAddPegawai').bootstrapValidator({
+        message: 'Nilai tidak valid',
+       feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            pegawai_nip: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan isikan nip'
+                    },
+					numeric: {
+						message: 'isian harus berupa angka'
+					},
+                    stringLength: {
+                        min: 18,
+                        max: 18,
+                        message: 'harus 18 digit angka'
+                    }
+                }
+            },
+			pegawai_nama: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan isikan nama lengkap'
+                    },
+                    stringLength: {
+                        min: 10,
+                        max: 100,
+                        message: 'minimal 10 huruf'
+                    }
+                }
+            },
+			pegawai_nama_panggilan: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan isikan nama panggilan'
+                    },
+                    stringLength: {
+                        min: 4,
+                        max: 15,
+                        message: 'minimal 4 huruf'
+                    }
+                }
+            },
+			pegawai_nip_lama: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan isikan nip lama bps'
+                    },
+					numeric: {
+						message: 'isian harus berupa angka'
+					},
+                    stringLength: {
+                        min: 9,
+                        max: 9,
+                        message: 'harus 9 digit angka'
+                    }
+                }
+            },
+			pegawai_agama: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih agama'
+                    }					
+                }
+            },
+			pegawai_jk: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih jenis kelamin'
+                    }					
+                }
+            },
+			pegawai_tempat_lahir: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan isikan tempat lahir'
+                    },
+                    stringLength: {
+                        min: 4,
+                        max: 30,
+                        message: 'minimal 4 huruf'
+                    }
+                }
+            },
+			pegawai_unit: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih jenis unit kerj'
+                    }					
+                }
+            }
+        }
+    });
+});
+$(document).ready(function() {
     $('#formGantiPassword').bootstrapValidator({
         message: 'This value is not valid',
        feedbackIcons: {
