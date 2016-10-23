@@ -1,11 +1,10 @@
 <?php
 $db = new db();
 $conn = $db -> connect();
-$sql_pegawai = $conn -> query("select * from m_pegawai order by pegawai_nip,pegawai_unit asc");
+$sql_pegawai = $conn -> query("select * from m_pegawai where pegawai_prov='2' order by pegawai_nip,pegawai_unit asc");
 $cek= $sql_pegawai -> num_rows;
 if ($cek > 0) {
 ?>
-<legend>Daftar pegawai</legend>
 <div class="table-responsive">
 <table class="table table-hover table-striped table-condensed">
 	<tr class="info">

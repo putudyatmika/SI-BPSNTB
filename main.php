@@ -1,13 +1,13 @@
 <section class="utama">
-    <?php 
+    <?php
 		if ($page=="pegawai") {
 			include 'page/pegawai/m_pegawai.php';
 		}
-		elseif ($page=="master") {
+		elseif (($page=="master") and ($_SESSION['sesi_level']>90)) {
 			include 'page/master/m_master.php';
 		}
 		elseif ($page=="kinerja") {
-			include 'page/kinerja/m_pegawai.php';
+			include 'page/kinerja/m_kinerja.php';
 		}
 		elseif ($page=="logout") {
 			include 'page/login/logout.php';
@@ -16,6 +16,5 @@
 			include 'page/utama/m_utama.php';
 		}
 	?>
-	
+
 </section>
-	

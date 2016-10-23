@@ -5,13 +5,15 @@ $sql_users = $conn -> query("select * from users order by user_nip, user_id asc"
 $cek= $sql_users -> num_rows;
 if ($cek > 0) {
 ?>
+<legend>Daftar user</legend>
 <div class="table-responsive">
 <table class="table table-hover table-striped table-condensed">
-	<tr>
+	<tr class="active">
 	<th>NIP</th>
 	<th>User ID</th>
 	<th>Lastlogin</th>
 	<th>Last IP</th>
+	<th>Level</th>
 	<th>Status</th>
 	<th colspan="3">&nbsp;</th>
 	</tr>
@@ -23,6 +25,7 @@ if ($cek > 0) {
 			<td>'.$r->user_id.'</td>
 			<td>'.$r->user_lastlogin.'</td>
 			<td>'.$r->user_ip.'</td>
+			<td>'.$user_level[$r->user_level].'</td>
 			<td>'.$status_umum[$r->user_status].'</td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/view/'.$r->user_nip.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/edit/'.$r->user_nip.'"><i class="fa fa-pencil-square text-info" aria-hidden="true"></i></a></td>

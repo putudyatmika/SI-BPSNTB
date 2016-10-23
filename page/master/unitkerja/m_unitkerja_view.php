@@ -10,7 +10,6 @@ $nama_user_update=get_idnama_users($r->unit_diupdate_oleh);
 $dibuat_tgl=tgl_convert_waktu(1,$r->unit_dibuat_waktu);
 $diupdate_tgl=tgl_convert_waktu(1,$r->unit_diupdate_waktu);
 ?>
-<div class="col-lg-12 col-sm-12">
 <legend>Unit Kerja Detil</legend>
 <div class="alert alert-info" role="alert">
 		<dl class="dl-horizontal">
@@ -30,7 +29,7 @@ $diupdate_tgl=tgl_convert_waktu(1,$r->unit_diupdate_waktu);
 							<dd><?php echo $diupdate_tgl;?></dd>
 							<dt>Jenis</dt>
 							<dd><?php echo $JenisUnit[$r->unit_jenis];?></dd>
-							
+
 					</dl>
 		<div class="row">
 		<div class="container">
@@ -41,5 +40,4 @@ $diupdate_tgl=tgl_convert_waktu(1,$r->unit_diupdate_waktu);
 		?>
 		</div>
 		</div>
-</div>
 </div>

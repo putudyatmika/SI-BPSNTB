@@ -6,9 +6,8 @@ class db
 	if (mysqli_connect_errno()) {
 			printf("Connection Error : %s", mysqli_connect_errno());
 			exit();
-	} 
-	
-	return $mysqli;
+	}
+		return $mysqli;
 	}
 }
 ?>

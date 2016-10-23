@@ -165,7 +165,7 @@ h2 {
 					$_SESSION['sesi_level']=$r->user_level;
 					$login_ku="sukses";
 					$sql_update_login=$conn -> query("update users set user_ip='$ip', user_lastlogin='$waktu_lokal' where user_id='$user_id'");
-					$text_alert="Selamat Datang <b>".$r->user_nama."</b>, dalam 5 detik akan di bawa ke halaman depan";
+					$text_alert="Selamat Datang <b>".$r->user_nama."</b>";
 					print "<meta http-equiv=\"refresh\" content=\"3; URL=".$bps_url->getSetting()."\">";
 				}
 				else {
@@ -178,11 +178,11 @@ h2 {
 }
 	?>
 	<div class="row colored">
-        <div id="contentdiv" class="contcustom">
-            <h2>Login</h2>
-            <div>
-				<?php
+        <?php
 				if ($login_ku=="") { ?>
+          <div id="contentdiv" class="contcustom">
+              <h2>Login</h2>
+          <div>
 				<form class="form-horizontal" role="form" method="post" action="<?php echo $bps_url->getSetting(); ?>/login/ceklogin">
                 <input id="username" name="user_id" type="text" placeholder="username" required>
                 <input id="password" name="passwd" type="password" placeholder="password" required>

@@ -41,7 +41,7 @@
         <li><a href="<?php echo $bps_url->getSetting(); ?>/jadwal/">JADWAL</a></li>
         <li><a href="<?php echo $bps_url->getSetting(); ?>/surat/">SURAT</a></li>
 		<li><a href="<?php echo $bps_url->getSetting(); ?>/kinerja/">KINERJA</a></li>
-		<li><a href="<?php echo $bps_url->getSetting(); ?>/master/">MASTER</a></li>
+		<?php if ($_SESSION['sesi_level']>90) echo '<li><a href="'.$bps_url->getSetting().'/master/">MASTER</a></li>'; ?>
 		<li><a href="<?php echo $bps_url->getSetting(); ?>/profil/">PROFIL</a></li>
 		<li><a href="<?php echo $bps_url->getSetting(); ?>/logout/"><i class="fa fa-power-off" aria-hidden="true"></i> </a></li>
       </ul>

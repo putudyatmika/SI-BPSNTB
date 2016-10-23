@@ -11,8 +11,7 @@ $nama_user_update=get_idnama_users($r->user_diupdate_oleh);
 $dibuat_tgl=tgl_convert_waktu(1,$r->user_dibuat_waktu);
 $diupdate_tgl=tgl_convert_waktu(1,$r->user_diupdate_waktu);
 ?>
-<div class="col-lg-12 col-sm-12">
-<legend>User <strong><?php echo $r->user_id;?></strong> Detil</legend>
+<legend>Detil User <strong><?php echo $r->user_nama;?></strong></legend>
 <div class="alert alert-info" role="alert">
 		<dl class="dl-horizontal">
 			<dt>NIP</dt>
@@ -37,8 +36,8 @@ $diupdate_tgl=tgl_convert_waktu(1,$r->user_diupdate_waktu);
 			<dd><?php echo $dibuat_tgl;?></dd>
 			<dt>Diupdate Oleh</dt>
 			<dd><?php echo $nama_user_update;?></dd>
-			<dt>Diupdate tanggal</dt>	
-			<dd><?php echo $diupdate_tgl;?></dd>			
+			<dt>Diupdate tanggal</dt>
+			<dd><?php echo $diupdate_tgl;?></dd>
 		</dl>
 		<div class="row">
 		<div class="container">
@@ -49,5 +48,4 @@ $diupdate_tgl=tgl_convert_waktu(1,$r->user_diupdate_waktu);
 		?>
 		</div>
 		</div>
-</div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 $db = new db();
 $conn = $db -> connect();
-$sql_pegawai = $conn -> query("select * from m_pegawai order by pegawai_nip,pegawai_unit asc");
+$sql_pegawai = $conn -> query("select * from m_pegawai where pegawai_prov='1' order by pegawai_nip,pegawai_unit asc");
 $cek= $sql_pegawai -> num_rows;
 if ($cek > 0) {
 ?>
@@ -21,7 +21,7 @@ if ($cek > 0) {
 		//$tgl_lahir=$r->pegawai_tempat_lahir.', '. $tgl_lahir;
 		echo '
 		<tr>
-			<td>'.$r->pegawai_nip_lama.'-'.$r->pegawai_nip.'</td>
+			<td>'.$r->pegawai_nip.'</td>
 			<td>'.$r->pegawai_nama.'</td>
 			<td>'.$JenisKelamin[$r->pegawai_jk].'</td>
 			<td>'.$nama_unit.'</td>

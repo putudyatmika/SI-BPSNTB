@@ -32,6 +32,9 @@
 			elseif ($lvl3=='provinsi') {
 				include 'page/master/pegawai/m_pegawai_provinsi.php';
 			}
+			elseif ($lvl3=='kabupaten') {
+				include 'page/master/pegawai/m_pegawai_kabupaten.php';
+			}
 			else {
 				include 'page/master/pegawai/m_pegawai_list.php';
 			}
