@@ -7,7 +7,7 @@ $cek=$sql_edit_peg->num_rows;
 if ($cek>0) {
 	$r=$sql_edit_peg->fetch_object();
 ?>
-<div class="col-lg-12 col-sm-12">
+		<legend>Edit pegawai <strong><?php echo $r->pegawai_nama;?></strong></legend>
 		<form id="formAddPegawai" name="formAddPegawai" action="<?php echo $url.'/'.$page.'/'.$act;?>/update/"  method="post" class="form-horizontal well" role="form">
 		<fieldset>
 
@@ -236,7 +236,7 @@ if ($cek>0) {
 		<input type="hidden" name="pegawai_nip" value="<?php echo $pegawai_nip;?>" />
 </fieldset>
 </form>
-</div>
+
 <?php }
 else {
 	echo 'NIP Pegawai salah / data belum tersedia';

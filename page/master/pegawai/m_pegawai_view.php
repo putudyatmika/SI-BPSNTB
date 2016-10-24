@@ -17,9 +17,9 @@ if ($cek>0) {
 	$tmtcpns=tgl_convert_pendek(1,$r->pegawai_tmt_cpns);
 	$tmtpns=tgl_convert_pendek(1,$r->pegawai_tmt_pns);
 	$namagol=get_pangkat_gol($r->pegawai_gol_pns);
+	$parent_nama=get_parent_unit($r->pegawai_unit);
 	?>
-	<div class="col-lg-12 col-sm-12">
-	<legend>Data <strong><?php echo $r->pegawai_nama;?></strong> Detil</legend>
+	<legend><strong><?php echo $r->pegawai_nama;?></strong> - <?php echo $parent_nama; ?></legend>
 	<div class="alert alert-info" role="alert">
 			<dl class="dl-horizontal">
 				<dt>NIP</dt>
@@ -62,7 +62,6 @@ if ($cek>0) {
 			?>
 			</div>
 			</div>
-	</div>
 	</div>
 <?php }
 else {

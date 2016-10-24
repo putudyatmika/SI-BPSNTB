@@ -51,7 +51,6 @@ body {
     border: 0;
     font-size: 13px !important;
     line-height: 1.42857143 !important;
-
     border-radius: 0;
 }
 .konten {
@@ -60,13 +59,13 @@ body {
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
 }
-
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
     background-color: #fff !important;
 }
 .navbar-brand {
   padding: 0px; /* firefox bug fix */
+
 }
 .navbar-brand>img {
    max-height: 100%;

@@ -14,7 +14,6 @@
 		else echo '(ERROR) Data unit : '.$nama_unit.' tidak dihapus';
 	}
 	else {
-		
 		 echo 'ERROR : Kode Unit '.$unit_kode.' ('.$unit_nama.') tidak ada';
 	}
 	$conn -> close();

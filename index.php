@@ -44,5 +44,11 @@ echo '
 	lvl3 : '.$lvl3.' <br />
 	lvl4 : '.$lvl4.' <br />
 	lvl5 : '.$lvl5.' <br />
+	<br />
 	';
+echo $_SESSION['sesi_user_id'] .'<br />'.
+$_SESSION['sesi_user_nip'] .'<br />'.
+$_SESSION['sesi_passwd'] .'<br />'.
+$_SESSION['sesi_nama'] .'<br />'.
+$_SESSION['sesi_level'];
 ?>

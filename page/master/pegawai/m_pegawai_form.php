@@ -1,8 +1,6 @@
-<div class="col-lg-12 col-sm-12">
+	<legend>Tambah data pegawai baru</legend>
 		<form id="formAddPegawai" name="formAddPegawai" action="<?php echo $url.'/'.$page.'/'.$act;?>/save/"  method="post" class="form-horizontal well" role="form">
 		<fieldset>
-
-
 		<div class="form-group">
 			<label for="pegawai_nip" class="col-sm-3 control-label">NIP</label>
 
@@ -227,4 +225,3 @@
 		</div>
 </fieldset>
 </form>
-</div>

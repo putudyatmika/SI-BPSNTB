@@ -1,14 +1,14 @@
 <?php
 $db = new db();
 $conn = $db -> connect();
-$sql_unitkerja = $conn -> query("select * from m_unitkerja order by unit_jenis,unit_kode asc");
+$sql_unitkerja = $conn -> query("select * from m_unitkerja where unit_jenis='1' order by unit_jenis,unit_kode asc");
 $cek= $sql_unitkerja -> num_rows;
 if ($cek > 0) {
 ?>
 <legend>Daftar unit kerja</legend>
 <div class="table-responsive">
 <table class="table table-hover table-striped table-condensed">
-	<tr class="success">
+	<tr class="danger">
 	<th>Kode</th>
 	<th>Nama Unit</th>
 	<th>Parent</th>
@@ -20,7 +20,7 @@ if ($cek > 0) {
 	while ($r = $sql_unitkerja ->fetch_object()) {
 		$nama_unit=get_nama_unit($r->unit_parent);
 		$es3=substr($r->unit_kode,-1,1);
-		if (($es3==0) and ($i != 1)) echo '<tr class="success"><td colspan="7"></td></tr>';
+		if (($es3==0) and ($i != 1)) echo '<tr class="danger"><td colspan="7"></td></tr>';
 		echo '
 		<tr>
 			<td>'.$r->unit_kode.'</td>

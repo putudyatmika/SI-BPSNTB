@@ -315,129 +315,77 @@ $(document).ready(function() {
         }
     });
 });
-$(document).ready(function() {
-    $('#formGantiPassword').bootstrapValidator({
-        message: 'This value is not valid',
-       feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            users_passwd: {
 
-                validators: {
-                    notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
-                    }
-                }
-            },
-			users_passwd_baru: {
-
-                validators: {
-                    notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
-                    },
-					stringLength: {
-                        min: 4,
-                        message: 'password minimal 4 karakter'
-                    },
-					identical: {
-                        field: 'users_passwd_baru_2',
-                        message: 'password baru tidak sama dengan ulangi password baru'
-                    }
-                }
-            },
-			users_passwd_baru_2: {
-                validators: {
-                    notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
-                    },
-					identical: {
-                        field: 'users_passwd_baru',
-                        message: 'ulangi password baru tidak sama dengan password baru'
-                    }
-				}
-            }
-        }
-    });
-});
 $(document).ready(function() {
     $('#formAddUser').bootstrapValidator({
-       message: 'This value is not valid',
+        message: 'Nilai tidak valid',
        feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            users_id: {
-
+            user_nip: {
                 validators: {
                     notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
-                    },
-					stringLength: {
-                        min: 4,
-						max: 20,
-                        message: 'username minimal 4 karakter max 20 karakter'
+                        message: 'Silakan pilih nip pegawai'
                     }
                 }
             },
-			users_passwd: {
-
+			    user_id: {
                 validators: {
                     notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
+                        message: 'Silakan isikan user ID'
                     },
-					stringLength: {
-                        min: 4,
-                        message: 'password minimal 4 karakter'
-                    },
-					identical: {
-                        field: 'users_passwd_2',
-                        message: 'password tidak sama dengan ulangi password'
+                    stringLength: {
+                        min: 3,
+                        max: 20,
+                        message: 'minimal 3 huruf'
                     }
                 }
             },
-			users_passwd_2: {
-                validators: {
-                    notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
-                    },
-					identical: {
-                        field: 'users_passwd',
-                        message: 'ulangi password tidak sama dengan password'
+            user_passwd: {
+                  validators: {
+                      notEmpty: {
+                          message: 'Silakan isikan password'
+                      },
+                      stringLength: {
+                          min: 4,
+                          message: 'minimal 4 huruf'
+                      },
+                      identical: {
+                        field: 'user_passwd2',
+                        message: 'password tidak sama dengan konfirmasi password'
                     }
-				}
-            },
-			users_nama: {
-
-                validators: {
-                    notEmpty: {
-                        message: 'isian ini tidak boleh kosong'
-                    },
-					stringLength: {
-                        min: 4,
-						max: 20,
-                        message: 'nama minimal 4 karakter max 20 karakter'
+                  }
+              },
+              user_passwd2: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Silakan isikan konfirmasi password'
+                        },
+                        stringLength: {
+                            min: 4,
+                            message: 'minimal 4 huruf'
+                        },
+                        identical: {
+                          field: 'user_passwd',
+                          message: 'konfirmasi password tidak sama dengan password'
+                      }
                     }
-                }
-            },
-			users_level: {
-
+                },
+            user_level: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Silakan pilih level user'
+                          }
+                      }
+                  },
+			user_status: {
                 validators: {
                     notEmpty: {
-                        message: 'silakan dipilih'
-                    },
-                }
-            },
-			users_status: {
-
-                validators: {
-                    notEmpty: {
-                        message: 'silakan dipilih'
-                    },
+                        message: 'Silakan pilih status user'
+                    }
                 }
             }
         }

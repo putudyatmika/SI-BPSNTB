@@ -17,6 +17,7 @@ if ($_POST['submit_pegawai']) {
 	$pegawai_unit = $_POST['pegawai_unit'];
 	$pegawai_jabatan = $_POST['pegawai_jabatan'];
 	$pegawai_status = $_POST['pegawai_status'];
+	$tipe_unit=get_jenis_unit($pegawai_unit);
 	$waktu_lokal=date("Y-m-d H:i:s");
 
 	$pegawai_nama= strtoupper(strtolower($pegawai_nama));
@@ -31,7 +32,7 @@ if ($_POST['submit_pegawai']) {
 		echo 'ERROR : NIP '.$pegawai_nip.' ('.$pegawai_nama.') sudah tersedia';
 	}
 	else {
-		 $sql_unit_save = $conn -> query("insert into m_pegawai(pegawai_nip, pegawai_nama, pegawai_nama_panggilan, pegawai_nip_lama, pegawai_agama, pegawai_jk, pegawai_tempat_lahir, pegawai_tgl_lahir, pegawai_tmt_cpns, pegawai_tmt_pns, pegawai_gol_cpns, pegawai_gol_pns, pegawai_unit, pegawai_jabatan, pegawai_dibuat_oleh, pegawai_dibuat_waktu, pegawai_diupdate_oleh, pegawai_status) values('$pegawai_nip','$pegawai_nama','$pegawai_nama_panggilan','$pegawai_nip_lama','$pegawai_agama','$pegawai_jk','$pegawai_tempat_lahir','$pegawai_tgl_lahir','$pegawai_tmt_cpns','$pegawai_tmt_pns','$pegawai_gol_cpns','$pegawai_gol_pns','$pegawai_unit','$pegawai_jabatan', '$created', '$waktu_lokal', '$created','$pegawai_status')");
+		 $sql_unit_save = $conn -> query("insert into m_pegawai(pegawai_nip, pegawai_nama, pegawai_nama_panggilan, pegawai_nip_lama, pegawai_agama, pegawai_jk, pegawai_tempat_lahir, pegawai_tgl_lahir, pegawai_tmt_cpns, pegawai_tmt_pns, pegawai_gol_cpns, pegawai_gol_pns, pegawai_unit, pegawai_jabatan, pegawai_dibuat_oleh, pegawai_dibuat_waktu, pegawai_diupdate_oleh, pegawai_status,pegawai_prov,pegawai_users) values('$pegawai_nip','$pegawai_nama','$pegawai_nama_panggilan','$pegawai_nip_lama','$pegawai_agama','$pegawai_jk','$pegawai_tempat_lahir','$pegawai_tgl_lahir','$pegawai_tmt_cpns','$pegawai_tmt_pns','$pegawai_gol_cpns','$pegawai_gol_pns','$pegawai_unit','$pegawai_jabatan', '$created', '$waktu_lokal', '$created','$pegawai_status','$tipe_unit',0)");
 
 		 if ($sql_unit_save) echo 'SUCCESS : data pegawai berhasil disimpan';
 		 else echo 'ERROR : data tidak bisa disimpan';
