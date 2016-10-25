@@ -31,6 +31,9 @@ $bps_email -> setSetting("bps_email");
 $bps_fax = new SettingWeb;
 $bps_fax -> setSetting("bps_fax");
 
+$bps_kode = new SettingWeb;
+$bps_kode -> setSetting("bps_kode");
+
 //batas setting
 
 date_default_timezone_set($bps_timezone->getSetting());

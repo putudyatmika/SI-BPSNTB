@@ -53,6 +53,27 @@
 				</div>
 		</div>
 		<div class="form-group">
+			<label for="unit_eselon" class="col-sm-2 control-label">Eselon</label>
+
+				<div class="col-sm-3">
+					<select class="form-control" name="unit_eselon" id="unit_eselon" style="font-family:'FontAwesome', Arial;">
+						<option value="">Pilih Unit Eselon</option>
+						<?php
+						for ($i=1;$i<=4;$i++)
+							{
+								if ($r->unit_eselon==$i) {
+									$pilih3='selected="selected"';
+								}
+								else {
+									$pilih3='';
+								}
+								echo '<option value="'.$i.'" '.$pilih3.'>'.$unit_eselon[$i].'</option>';
+							}
+						?>
+						</select>
+				</div>
+		</div>
+		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-8">
 			  <button type="submit" id="submit_unit" name="submit_unit" value="save" class="btn btn-primary">SAVE</button>
 			</div>

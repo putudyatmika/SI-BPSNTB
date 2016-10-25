@@ -14,7 +14,7 @@ $parent_unit=$r->unit_parent;
 
 
 		<div class="form-group">
-			<label for="unit_kode" class="col-sm-2 control-label">Kode Unit</label>
+			<label for="unit_kode" class="col-sm-2 control-label">Kode</label>
 
 				<div class="col-lg-3 col-sm-3">
 					<div class="input-group margin-bottom-sm">
@@ -24,7 +24,7 @@ $parent_unit=$r->unit_parent;
 				</div>
 		</div>
 		<div class="form-group">
-			<label for="unit_nama" class="col-sm-2 control-label">Nama Unit</label>
+			<label for="unit_nama" class="col-sm-2 control-label">Nama</label>
 
 				<div class="col-lg-7 col-sm-7">
 					<div class="input-group margin-bottom-sm">
@@ -36,7 +36,7 @@ $parent_unit=$r->unit_parent;
 				</div>
 		</div>
 		<div class="form-group">
-			<label for="unit_parent" class="col-sm-2 control-label">Parent Unit</label>
+			<label for="unit_parent" class="col-sm-2 control-label">Parent</label>
 
 				<div class="col-sm-7">
 					<select class="form-control" name="unit_parent" id="unit_parent" style="font-family:'FontAwesome', Arial;">
@@ -59,11 +59,11 @@ $parent_unit=$r->unit_parent;
 				</div>
 		</div>
 		<div class="form-group">
-			<label for="unit_jenis" class="col-sm-2 control-label">Jenis Unit</label>
+			<label for="unit_jenis" class="col-sm-2 control-label">Jenis</label>
 
 				<div class="col-sm-3">
 					<select class="form-control" name="unit_jenis" id="unit_jenis" style="font-family:'FontAwesome', Arial;">
-						<option value="">Pilih</option>
+						<option value="">Pilih Jenis Unit</option>
 						<?php
 						for ($i=1;$i<=2;$i++)
 							{
@@ -79,7 +79,27 @@ $parent_unit=$r->unit_parent;
 						</select>
 				</div>
 		</div>
+		<div class="form-group">
+			<label for="unit_eselon" class="col-sm-2 control-label">Eselon</label>
 
+				<div class="col-sm-3">
+					<select class="form-control" name="unit_eselon" id="unit_eselon" style="font-family:'FontAwesome', Arial;">
+						<option value="">Pilih Unit Eselon</option>
+						<?php
+						for ($i=1;$i<=4;$i++)
+							{
+								if ($r->unit_eselon==$i) {
+									$pilih3='selected="selected"';
+								}
+								else {
+									$pilih3='';
+								}
+								echo '<option value="'.$i.'" '.$pilih3.'>'.$unit_eselon[$i].'</option>';
+							}
+						?>
+						</select>
+				</div>
+		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-8">
 			  <button type="submit" id="submit_unit" name="submit_unit" value="update" class="btn btn-primary">UPDATE</button>

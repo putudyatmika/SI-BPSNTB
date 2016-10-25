@@ -1,4 +1,9 @@
 <?php
+/*
+SI-BPSNTB
+Sistem Informasi BPS Provinsi NTB
+Created by I Putu Dyatmika
+*/
 session_start();
 require('setting-db.php');
 require('fungsi/vars.php');
@@ -10,7 +15,7 @@ require('page/settings/settings.php'); //setting web
 if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
 else $ip=$_SERVER['REMOTE_ADDR'];
 /*
-// 
+//
 // /page/act/lvl3/lvl4/lvl5
 // /guest/add/
 // /guest/list/1
@@ -30,7 +35,7 @@ if (!isset($_SESSION['sesi_user_id']) or empty($_SESSION['sesi_user_id']))
 		require ('page/login/login.php');
 		exit();
 	 }
-	 
+
 require('page/pengunjung/pengunjung-code.php');
 require ('header.php');
 require ('main.php');
@@ -46,9 +51,11 @@ echo '
 	lvl5 : '.$lvl5.' <br />
 	<br />
 	';
+if (isset($_SESSION['sesi_user_id'])) {
 echo $_SESSION['sesi_user_id'] .'<br />'.
 $_SESSION['sesi_user_nip'] .'<br />'.
 $_SESSION['sesi_passwd'] .'<br />'.
 $_SESSION['sesi_nama'] .'<br />'.
 $_SESSION['sesi_level'];
+}
 ?>

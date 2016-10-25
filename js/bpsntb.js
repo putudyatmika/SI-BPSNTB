@@ -167,10 +167,17 @@ $(document).ready(function() {
                     }
                 }
             },
-			unit_jenis: {
+      unit_jenis: {
                 validators: {
                     notEmpty: {
-                        message: 'Silakan pilih jenis unit'
+                        message: 'Silakan pilih unit jenis'
+                    }
+                }
+            },
+			unit_eselon: {
+                validators: {
+                    notEmpty: {
+                        message: 'Silakan pilih unit eselon'
                     }
                 }
             }

@@ -22,6 +22,9 @@
 	elseif ($act=="verifikator") {
 
 	}
+	elseif ($act=="ckp") {
+		include 'page/master/ckp/m_ckp.php';
+	}
 	else {
 		echo 'Sistem Informasi BPS NTB<br />Menu ini merupakan kumpulan master data untuk sistem';
 	}
@@ -36,6 +39,8 @@
 			<a href="<?php echo $bps_url->getSetting(); ?>/master/settings/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; Settings</a>
 			<a href="<?php echo $bps_url->getSetting(); ?>/master/pegawai/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; Pegawai</a>
 			<a href="<?php echo $bps_url->getSetting(); ?>/master/unitkerja/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; Unit Kerja</a>
+			<a href="<?php echo $bps_url->getSetting(); ?>/master/sakip/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; SAKIP</a>
+			<a href="<?php echo $bps_url->getSetting(); ?>/master/ckp/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; CKP</a>
 			<a href="<?php echo $bps_url->getSetting(); ?>/master/surat/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; Surat</a>
 			<a href="<?php echo $bps_url->getSetting(); ?>/master/verifikator/" class="list-group-item"><i class="fa fa-dot-circle-o text-primary fa-fw"></i>&nbsp; Verifikator</a>
 			</div>

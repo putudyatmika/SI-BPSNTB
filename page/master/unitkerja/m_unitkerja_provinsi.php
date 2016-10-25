@@ -13,6 +13,7 @@ if ($cek > 0) {
 	<th>Nama Unit</th>
 	<th>Parent</th>
 	<th>Jenis</th>
+	<th>Eselon</th>
 	<th colspan="3">Aksi</th>
 	</tr>
 	<?php
@@ -27,6 +28,7 @@ if ($cek > 0) {
 			<td>'.$r->unit_nama.'</td>
 			<td>'.$nama_unit.'</td>
 			<td>'.$JenisUnit[$r->unit_jenis].'</td>
+			<td>'.$unit_eselon[$r->unit_eselon].'</td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/view/'.$r->unit_kode.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/edit/'.$r->unit_kode.'"><i class="fa fa-pencil-square text-info" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/delete/'.$r->unit_kode.'" data-confirm="Apakah data ('.$r->unit_kode.') '.$r->unit_nama.' ini akan di hapus?"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a></td>

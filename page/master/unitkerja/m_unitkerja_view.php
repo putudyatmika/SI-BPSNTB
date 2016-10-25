@@ -29,6 +29,8 @@ $diupdate_tgl=tgl_convert_waktu(1,$r->unit_diupdate_waktu);
 							<dd><?php echo $diupdate_tgl;?></dd>
 							<dt>Jenis</dt>
 							<dd><?php echo $JenisUnit[$r->unit_jenis];?></dd>
+							<dt>Eselon Unit</dt>
+							<dd><?php echo $unit_eselon[$r->unit_eselon];?></dd>
 
 					</dl>
 		<div class="row">
