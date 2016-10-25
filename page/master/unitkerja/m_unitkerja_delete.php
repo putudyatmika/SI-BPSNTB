@@ -1,7 +1,11 @@
 <div class="col-lg-12 col-sm-12">
 <?php
-    $unit_kode=$lvl4;
-	$db = new db();
+  $unit_kode=$lvl4;
+  if ($unit_kode==$bps_kode->getSetting()) {
+    echo 'Data Unit utama tidak bisa dihapus';
+  }
+  else {
+  $db = new db();
 	$conn = $db -> connect();
 	$sql_unit= $conn -> query("select * from m_unitkerja where unit_kode='$unit_kode'");
 	$cek=$sql_unit -> num_rows;
@@ -17,5 +21,6 @@
 		 echo 'ERROR : Kode Unit '.$unit_kode.' ('.$unit_nama.') tidak ada';
 	}
 	$conn -> close();
+}
 ?>
 </div>

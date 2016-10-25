@@ -1,13 +1,13 @@
 <div class="col-lg-12 col-sm-12">
 <?php
 if ($_POST['submit_unit']) {
-	
+
 	$unit_kode =$_POST['unit_kode'];
 	$unit_nama = $_POST['unit_nama'];
 	$unit_parent = $_POST['unit_parent'];
 	$unit_jenis = $_POST['unit_jenis'];
 	$waktu_lokal=date("Y-m-d H:i:s");
-		
+
 	//$tipe_nama= strtoupper(strtolower($tipe_nama));
 	//$tipe_kode= strtoupper(strtolower($tipe_kode));
 	if ($unit_parent=='') {
