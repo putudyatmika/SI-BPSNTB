@@ -33,7 +33,7 @@
   });
 
            $('#tanggal').datepicker()
-    .on("changeDate", function(e){
+    .on("changeDate", function(e) {
       $('#pegawai_tgl_lahir').val(e.format('yyyy-mm-dd'));
   });
 
@@ -46,7 +46,6 @@
 
            $('#tgl_cpns').datepicker()
     .on("changeDate", function(e){
-
       $('#pegawai_tmt_cpns').prop('readonly',false);
       $('#pegawai_tmt_cpns').val(e.format('yyyy-mm-dd'));
       $('#pegawai_tmt_cpns').prop('readonly',true);
@@ -62,7 +61,6 @@ $(document).ready(function() {
 
            $('#tgl_pns').datepicker()
     .on("changeDate", function(e){
-
       $('#pegawai_tmt_pns').prop('readonly',false);
       $('#pegawai_tmt_pns').val(e.format('yyyy-mm-dd'));
       $('#pegawai_tmt_pns').prop('readonly',true);

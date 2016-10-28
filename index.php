@@ -27,9 +27,13 @@ else $page=$_GET['page'];
 */
 $url=$bps_url->getSetting();
 $url_asli = explode("/",$_SERVER["REQUEST_URI"]);
-
+$url_db=explode("/",$bps_url->getSetting());
+if ($url_db[2] != $_SERVER['HTTP_HOST']) {
+  print "<meta http-equiv=\"refresh\" content=\"0; URL=".$bps_url->getSetting()."\">";
+}
 require('fungsi/fungsi_url_lokal.php');
 //require('fungsi/fungsi_url_net.php');
+
 if (!isset($_SESSION['sesi_user_id']) or empty($_SESSION['sesi_user_id']))
      {
 		require ('page/login/login.php');
@@ -57,5 +61,8 @@ $_SESSION['sesi_user_nip'] .'<br />'.
 $_SESSION['sesi_passwd'] .'<br />'.
 $_SESSION['sesi_nama'] .'<br />'.
 $_SESSION['sesi_level'];
+echo '<br />';
+echo 'URL asli : '.$_SERVER["REQUEST_URI"];
+echo '<br />Url DB : '.$url_db[2].'<br />URL server : '.$_SERVER['HTTP_HOST'];
 }
 ?>
