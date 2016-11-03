@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Bli Mika - I Putu Dyatmika <pdyatmika@gmail.com>">
 	<meta name="language" content="id,en" />
-    <link rel="shortcut icon" href="<?php echo $bps_url->getSetting(); ?>/images/bps.ico">
+    <link rel="shortcut icon" href="<?php echo $bps_url->getSetting(); ?>/img/bps.ico">
 
     <title>Sistem Infomasi BPS Provinsi NTB (SI-BPSNTB)</title>
 
@@ -78,7 +78,10 @@ h2 {
     font-weight: bold;
     color: #ABABAB;
 }
-
+h4 {
+   margin-bottom: 20px;
+  font-weight: bold;
+}
 .btn {
     border-radius: 2px;
     padding: 10px;
@@ -181,7 +184,8 @@ h2 {
         <?php
 				if ($login_ku=="") { ?>
           <div id="contentdiv" class="contcustom">
-              <h2>Login</h2>
+              <img src="<?php echo $bps_url->getSetting(); ?>/images/logo.png" height="70"  />
+              <h4>BADAN PUSAT STATISTIK<br />PROVINSI NTB</h4>
           <div>
 				<form class="form-horizontal" role="form" method="post" action="<?php echo $bps_url->getSetting(); ?>/login/ceklogin">
                 <input id="username" name="user_id" type="text" placeholder="username" required>
