@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2016 at 02:18 PM
+-- Generation Time: Nov 04, 2016 at 02:00 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `ntb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ckp_r`
+--
+
+CREATE TABLE IF NOT EXISTS `ckp_r` (
+`ckp_r_id` bigint(10) NOT NULL,
+  `ckp_r_keg` varchar(255) NOT NULL,
+  `ckp_r_satuan` int(2) NOT NULL,
+  `ckp_r_target` int(6) NOT NULL,
+  `ckp_r_realisasi` int(6) NOT NULL,
+  `ckp_r_persen` float(3,2) NOT NULL,
+  `ckp_r_kualitas` float(3,2) NOT NULL,
+  `ckp_r_kodekeg` int(6) NOT NULL,
+  `ckp_r_angkakredit` float(4,2) NOT NULL,
+  `ckp_r_ket` varchar(255) NOT NULL,
+  `ckp_r_unitkode_sumber` int(5) NOT NULL,
+  `ckp_r_pegnip_sumber` bigint(18) NOT NULL,
+  `ckp_r_unitkode_penerima` int(5) NOT NULL,
+  `ckp_r_pegnip_penerima` bigint(18) NOT NULL,
+  `ckp_r_bulan` int(2) NOT NULL,
+  `ckp_r_tahun` int(4) NOT NULL,
+  `ckp_r_peg_jabatan` int(2) NOT NULL,
+  `ckp_r_tipe` int(1) NOT NULL,
+  `ckp_r_status` int(1) NOT NULL,
+  `ckp_r_edit` int(1) NOT NULL,
+  `ckp_r_tgl_dibuat` datetime NOT NULL,
+  `ckp_r_tgl_diupdate` datetime NOT NULL,
+  `ckp_r_penilai` bigint(18) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -61,13 +93,20 @@ CREATE TABLE IF NOT EXISTS `ckp_t` (
 `ckp_t_id` bigint(10) NOT NULL,
   `ckp_t_keg` varchar(255) NOT NULL,
   `ckp_t_satuan` int(2) NOT NULL,
-  `ckp_target` int(6) NOT NULL,
+  `ckp_t_target` int(6) NOT NULL,
   `ckp_t_ket` varchar(255) NOT NULL,
-  `ckp_t_unit_kode` int(5) NOT NULL,
-  `ckp_t_peg_nip` bigint(18) NOT NULL,
-  `ckp_t_periode_awal` date NOT NULL,
-  `ckp_t_periode_akhir` date NOT NULL,
-  `ckp_t_peg_jabatan` int(2) NOT NULL
+  `ckp_t_unitkode_sumber` int(5) NOT NULL,
+  `ckp_t_pegnip_sumber` bigint(18) NOT NULL,
+  `ckp_t_unitkode_penerima` int(5) NOT NULL,
+  `ckp_t_pegnip_penerima` bigint(18) NOT NULL,
+  `ckp_t_bulan` int(2) NOT NULL,
+  `ckp_t_tahun` int(4) NOT NULL,
+  `ckp_t_peg_jabatan` int(2) NOT NULL,
+  `ckp_t_tipe` int(1) NOT NULL,
+  `ckp_t_status` int(1) NOT NULL,
+  `ckp_t_edit` int(1) NOT NULL,
+  `ckp_t_tgl_dibuat` datetime NOT NULL,
+  `ckp_t_tgl_diupdate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -191,8 +230,7 @@ INSERT INTO `m_pegawai` (`pegawai_nip`, `pegawai_nama`, `pegawai_nama_panggilan`
 (198203192004121002, 'I PUTU DYATMIKA', 'MIKA', '', 'S.ST', 340017401, 4, 1, 'MATARAM', '1982-03-19', '2004-12-01', '2005-12-01', 31, 34, 52563, 1, 999999999, '2016-10-12 14:14:17', 198203192004121002, '2016-10-24 07:07:46', 2, 1, 1),
 (198204262004122001, 'GUSTI KETUT INDRADEWI', 'INDRA', NULL, NULL, 340017402, 4, 2, 'GIANYAR', '1982-04-26', '2004-12-01', '2005-12-01', 31, 34, 52521, 1, 99999999999, '2016-10-22 00:26:49', 198203192004121002, '2016-10-24 07:09:34', 2, 1, 0),
 (198311032011011008, 'CASSLIRAIS SURAWAN', 'CASSLI', NULL, NULL, 340054408, 1, 1, 'YOGYAKARTA', '1983-11-03', '2011-01-01', '2012-01-02', 31, 32, 52562, 2, 198203192004121002, '2016-10-22 20:00:17', 198203192004121002, '2016-10-24 07:13:23', 2, 1, 1),
-(198511162010121006, 'HASAN BASRIL', 'HASAN', NULL, NULL, 340054212, 1, 1, 'JAKARTA', '1982-11-16', '2010-12-01', '2011-12-01', 31, 32, 52016, 1, 198203192004121002, '2016-10-22 21:28:12', 198203192004121002, '2016-10-24 07:08:38', 2, 2, 0),
-(199403062016022001, 'AYU ROSITA SARI', 'AYU ROSITA', NULL, NULL, 340057313, 1, 2, 'MAGELANG', '1994-03-06', '2016-02-01', '0000-00-00', 31, 31, 52025, 2, 198203192004121002, '2016-10-22 21:30:36', 198203192004121002, '2016-10-24 07:07:30', 1, 2, 0);
+(198511162010121006, 'HASAN BASRIL', 'HASAN', NULL, NULL, 340054212, 1, 1, 'JAKARTA', '1982-11-16', '2010-12-01', '2011-12-01', 31, 32, 52016, 1, 198203192004121002, '2016-10-22 21:28:12', 198203192004121002, '2016-10-29 16:10:04', 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -344,7 +382,7 @@ INSERT INTO `settings` (`setting_nama`, `setting_nilai`) VALUES
 ('bps_nama', 'BPS Provinsi Nusa Tenggara Barat'),
 ('bps_telepon', '0370 625381'),
 ('bps_timezone', 'Asia/Makassar'),
-('bps_url', 'http://10.52.6.31/sibpsntb');
+('bps_url', 'http://192.168.1.9/sibpsntb');
 
 -- --------------------------------------------------------
 
@@ -376,12 +414,19 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`user_nip`, `user_id`, `user_nama`, `user_passwd`, `user_unit`, `user_level`, `user_lastlogin`, `user_ip`, `user_dibuat_oleh`, `user_dibuat_waktu`, `user_diupdate_oleh`, `user_diupdate_waktu`, `user_status`, `user_kode_aktivasi`) VALUES
 (99999999999, 'admin', 'Super Administrator', 'admin', 52000, 99, '2016-10-22 13:49:57', '192.168.1.18', 99999999999, '2016-10-19 11:37:37', 198203192004121002, '2016-10-21 01:11:19', 1, ''),
 (197412311996121001, 'agus', 'AGUS SUDIBYO', 'agus', 52560, 30, '2016-10-25 01:44:45', '', 198203192004121002, '2016-10-25 09:44:45', 198203192004121002, '2016-10-25 09:44:45', 1, ''),
-(198203192004121002, 'mika', 'I Putu Dyatmika', 'mika', 52563, 99, '2016-10-25 01:31:31', '10.52.6.31', 198203192004121002, '2016-10-21 01:11:54', 99999999999, '2016-10-21 23:38:57', 1, ''),
-(198311032011011008, 'cassli', 'CASSLIRAIS SURAWAN', 'cassli', 52562, 1, '2016-10-24 07:13:23', '', 198203192004121002, '2016-10-24 15:13:23', 198203192004121002, '2016-10-24 15:13:23', 1, '');
+(198203192004121002, 'mika', 'I Putu Dyatmika', 'mika', 52563, 99, '2016-11-03 15:05:19', '192.168.1.9', 198203192004121002, '2016-10-21 01:11:54', 99999999999, '2016-10-21 23:38:57', 1, ''),
+(198311032011011008, 'cassli', 'CASSLIRAIS SURAWAN', 'cassli', 52562, 1, '2016-10-24 07:13:23', '', 198203192004121002, '2016-10-24 15:13:23', 198203192004121002, '2016-10-24 15:13:23', 1, ''),
+(198511162010121006, 'hasan', 'HASAN BASRIL', 'hasan', 52016, 10, '2016-10-29 16:10:18', '192.168.1.9', 198203192004121002, '2016-10-30 00:10:04', 198203192004121002, '2016-10-30 00:10:04', 1, '');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `ckp_r`
+--
+ALTER TABLE `ckp_r`
+ ADD PRIMARY KEY (`ckp_r_id`);
 
 --
 -- Indexes for table `ckp_satuan`
@@ -459,6 +504,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `ckp_r`
+--
+ALTER TABLE `ckp_r`
+MODIFY `ckp_r_id` bigint(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ckp_satuan`
 --

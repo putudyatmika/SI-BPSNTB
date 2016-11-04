@@ -166,6 +166,7 @@ h4 {
 					$_SESSION['sesi_passwd']=$passwd;
 					$_SESSION['sesi_nama']=$r->user_nama;
 					$_SESSION['sesi_level']=$r->user_level;
+          $_SESSION['sesi_unitkode']=$r->user_unit;
 					$login_ku="sukses";
 					$sql_update_login=$conn -> query("update users set user_ip='$ip', user_lastlogin='$waktu_lokal' where user_id='$user_id'");
 					$text_alert="Selamat Datang <b>".$r->user_nama."</b>";
