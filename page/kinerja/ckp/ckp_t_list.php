@@ -51,16 +51,28 @@ $sql_ckpt = $conn -> query("select * from ckp_t where ckp_t_pegnip='$ckp_t_pegni
 $cek= $sql_ckpt -> num_rows;
 if ($cek > 0) {
 ?>
-<legend>CKP-T Bulan <strong><?php echo $nama_bulan_panjang[$bln] .' '. $thn; ?></strong> </legend>
+<legend>CKP-T Bulan <strong><?php echo $nama_bulan_panjang[$bln] .' '. $thn .' - '. $_SESSION['sesi_nama']; ?></strong> </legend>
+<form name="formCKPCheck" id="formCKPCheck" action="<?php echo $url.'/'.$page.'/'.$act;?>/ckptcheck/" method="post">
+	<div class="dropdown">
+	  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih Menu
+	  <span class="caret"></span></button>
+	  <ul class="dropdown-menu">
+	    <li><a href="#"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Draft</a></li>
+	    <li><a href="#"><i class="fa fa-check text-primary" aria-hidden="true"></i> Diajukan</a></li>
+			<li class="divider"></li>
+	    <li><a href="#"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i> Hapus</a></li>
+	  </ul>
+	</div>
 <div class="table-responsive">
 <table class="table table-hover table-striped table-condensed">
 	<tr class="info">
+	<th><input type="checkbox" name="pilihsemua" id="pilihsemua"></th>
 	<th>#</th>
 	<th>Uraian Kegiatan</th>
 	<th>Satuan</th>
 	<th>Target</th>
-	<th>Ket</th>
-	<th colspan="3">Aksi</th>
+	<th>Status</th>
+	<th colspan="4">Aksi</th>
 	</tr>
 	<?php
 	$c=1;
@@ -70,11 +82,13 @@ if ($cek > 0) {
 		//$tgl_lahir=$r->pegawai_tempat_lahir.', '. $tgl_lahir;
 		echo '
 		<tr>
+			<td><input type="checkbox" class="pilih" name="check[]" value="'.$r->ckp_t_id.'"></td>
 			<td>'.$c.'</td>
 			<td>'.$r->ckp_t_keg.'</td>
 			<td>'.$ckp_satuan.'</td>
 			<td>'.$r->ckp_t_target.'</td>
-			<td>'.$r->ckp_t_ket.'</td>
+			<td>'.$ckpStatus[$r->ckp_t_status].'</td>
+			<td><a href="'.$url.'/'.$page.'/'.$act.'/ajukan/'.$r->ckp_t_id.'"><i class="fa fa-check text-primary" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/view/'.$r->ckp_t_id.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/edit/'.$r->ckp_t_id.'"><i class="fa fa-pencil-square text-info" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/delete/'.$r->ckp_t_id.'" data-confirm="Apakah data '.$r->ckp_t_keg.' ini akan di hapus?"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a></td>
@@ -84,9 +98,20 @@ if ($cek > 0) {
 	}
 	?>
 </table>
-</div>
+	</div>
+	<div class="dropup">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih Menu
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li><a href="#">Draft</a></li>
+			<li><a href="#">Diajukan</a></li>
+			<li><a href="#">Hapus</a></li>
+		</ul>
+	</div>
+</form>
 <?php }
 else {
 	echo 'Data masih kosong';
 }
+$conn->close();
  ?>

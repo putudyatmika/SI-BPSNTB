@@ -24,5 +24,5 @@ $jabatanPegawai=array(1=>'Kepala',2=>'Staf',3=>'KSK',4=>'Peltu');
 $unit_eselon=array(1=>'I',2=>'II',3=>'III',4=>'IV');
 $ckpTipe=array(1=>'Utama',2=>'Tambahan');
 $ckpEdit=array(1=>'Terbuka',2=>'Terkunci');
-$ckpStatus=array(1=>'Diajukan',2=>'Diterima',3=>'Ditolak');
+$ckpStatus=array(1=>'Draft',2=>'Diajukan',3=>'Diterima',4=>'Ditolak');
 ?>

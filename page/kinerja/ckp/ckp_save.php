@@ -18,7 +18,7 @@ if ($_POST['ckp_t_submit']) {
 	$created=$_SESSION['sesi_user_nip'];
 	$db = new db();
 	$conn = $db -> connect();
-	$sql_ckp= $conn -> query("select * from ckp_t where ckp_t_keg='$ckp_t_keg' and ckp_t_bulan='$ckp_t_bulan' and ckp_t_tahun='$ckp_t_tahun'");
+	$sql_ckp= $conn -> query("select * from ckp_t where ckp_t_keg='$ckp_t_keg' and ckp_t_pegnip='$ckp_t_pegnip' and ckp_t_bulan='$ckp_t_bulan' and ckp_t_tahun='$ckp_t_tahun'");
 	$cek=$sql_ckp -> num_rows;
 	if ($cek>0) {
 		echo 'ERROR : kegiatan '.$ckp_t_keg.' sudah tersedia';

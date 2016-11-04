@@ -21,7 +21,7 @@ if ($cek > 0) {
 	while ($r = $sql_unitkerja ->fetch_object()) {
 		$nama_unit=get_nama_unit($r->unit_parent);
 		$es3=substr($r->unit_kode,-1,1);
-		if (($es3==0) and ($i != 1)) echo '<tr class="success"><td colspan="7"></td></tr>';
+		if (($es3==0) and ($i != 1)) echo '<tr class="success"><td colspan="8"></td></tr>';
 		echo '
 		<tr>
 			<td>'.$r->unit_kode.'</td>
