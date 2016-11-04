@@ -60,7 +60,8 @@ echo $_SESSION['sesi_user_id'] .'<br />'.
 $_SESSION['sesi_user_nip'] .'<br />'.
 $_SESSION['sesi_passwd'] .'<br />'.
 $_SESSION['sesi_nama'] .'<br />'.
-$_SESSION['sesi_level'];
+$_SESSION['sesi_level'] .'<br />'.
+$_SESSION['sesi_unitkode'];
 echo '<br />';
 echo 'URL asli : '.$_SERVER["REQUEST_URI"];
 echo '<br />Url DB : '.$url_db[2].'<br />URL server : '.$_SERVER['HTTP_HOST'];

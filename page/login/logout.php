@@ -8,6 +8,7 @@
 	unset($_SESSION['sesi_nama']);
 	unset($_SESSION['sesi_level']);
 	unset($_SESSION['sesi_user_nip']);
+	unset($_SESSION['sesi_unitkode']);
 	print "<meta http-equiv=\"refresh\" content=\"3; URL=".$bps_url->getSetting()."\">";
 ?>
 		</div>

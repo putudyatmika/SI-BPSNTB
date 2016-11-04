@@ -2,7 +2,14 @@
 <div class="row konten">
 		<div class="col-lg-10 col-sm-10">
 		<div class="row">
-
+				<?php
+				if ($act=='ckp') {
+					include 'page/kinerja/ckp/ckp.php';
+				}
+				else {
+					echo 'Menu Kinerja setiap pegawai bidang bagian dan kabupaten/kota';
+				}
+				 ?>
 		</div>
 		</div>
 		<div class="col-lg-2 col-sm-2">
