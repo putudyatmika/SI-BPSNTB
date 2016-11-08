@@ -50,17 +50,49 @@ $ckp_t_pegnip=$_SESSION['sesi_user_nip'];
 $sql_ckpt = $conn -> query("select * from ckp_t where ckp_t_pegnip='$ckp_t_pegnip' and ckp_t_bulan='$bln' and ckp_t_tahun='$thn'");
 $cek= $sql_ckpt -> num_rows;
 if ($cek > 0) {
+	$tgl_periode=tgl_periode_ckp($bln,$thn);
+	$sql_peg = $conn -> query("select * from m_pegawai where pegawai_nip='$ckp_t_pegnip'");
+	$p = $sql_peg ->fetch_object();
+	$nama_unit=get_nama_unit($p->pegawai_unit);
+	$parent_nama=get_parent_unit($p->pegawai_unit);
 ?>
-<legend>CKP-T Bulan <strong><?php echo $nama_bulan_panjang[$bln] .' '. $thn; ?></strong> </legend>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Satuan organisasi</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $nama_unit; ?></div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Nama</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $_SESSION['sesi_nama']; ?></div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Jabatan</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $jabatanPegawai[$p->pegawai_jabatan] .' '. $nama_unit; ?></div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Periode</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $tgl_periode; ?></div>
+</div>
+<form name="formCKPCheck" id="formCKPCheck" action="<?php echo $url.'/'.$page.'/'.$act;?>/ckptcheck/" method="post">
+	<div class="dropdown">
+	  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih Menu
+	  <span class="caret"></span></button>
+	  <ul class="dropdown-menu">
+	    <li><a href="#"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Draft</a></li>
+	    <li><a href="#"><i class="fa fa-check text-primary" aria-hidden="true"></i> Diajukan</a></li>
+			<li class="divider"></li>
+	    <li><a href="#"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i> Hapus</a></li>
+	  </ul>
+	</div>
 <div class="table-responsive">
 <table class="table table-hover table-striped table-condensed">
 	<tr class="info">
+	<th><input type="checkbox" name="pilihsemua" id="pilihsemua"></th>
 	<th>#</th>
 	<th>Uraian Kegiatan</th>
 	<th>Satuan</th>
 	<th>Target</th>
-	<th>Ket</th>
-	<th colspan="3">Aksi</th>
+	<th>Status</th>
+	<th colspan="4">Aksi</th>
 	</tr>
 	<?php
 	$c=1;
@@ -70,11 +102,13 @@ if ($cek > 0) {
 		//$tgl_lahir=$r->pegawai_tempat_lahir.', '. $tgl_lahir;
 		echo '
 		<tr>
+			<td><input type="checkbox" class="pilih" name="check[]" value="'.$r->ckp_t_id.'"></td>
 			<td>'.$c.'</td>
 			<td>'.$r->ckp_t_keg.'</td>
 			<td>'.$ckp_satuan.'</td>
 			<td>'.$r->ckp_t_target.'</td>
-			<td>'.$r->ckp_t_ket.'</td>
+			<td>'.$ckpStatus[$r->ckp_t_status].'</td>
+			<td><a href="'.$url.'/'.$page.'/'.$act.'/ajukan/'.$r->ckp_t_id.'"><i class="fa fa-check text-primary" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/view/'.$r->ckp_t_id.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/edit/'.$r->ckp_t_id.'"><i class="fa fa-pencil-square text-info" aria-hidden="true"></i></a></td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/delete/'.$r->ckp_t_id.'" data-confirm="Apakah data '.$r->ckp_t_keg.' ini akan di hapus?"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a></td>
@@ -84,9 +118,20 @@ if ($cek > 0) {
 	}
 	?>
 </table>
-</div>
+	</div>
+	<div class="dropup">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih Menu
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li><a href="#">Draft</a></li>
+			<li><a href="#">Diajukan</a></li>
+			<li><a href="#">Hapus</a></li>
+		</ul>
+	</div>
+</form>
 <?php }
 else {
 	echo 'Data masih kosong';
 }
+$conn->close();
  ?>

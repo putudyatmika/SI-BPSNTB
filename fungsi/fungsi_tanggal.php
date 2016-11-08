@@ -54,4 +54,21 @@ function tgl_convert_pendek($bahasa,$tgl) {
 	}
 	return $tanggalan;
 }
+function tgl_periode_ckp($month = '', $year = '') {
+	 global $nama_bulan_pendek;
+   if (empty($month)) {
+      $month = date('m');
+   }
+   if (empty($year)) {
+      $year = date('Y');
+   }
+   $result = strtotime("{$year}-{$month}-01");
+   $result = strtotime('-1 second', strtotime('+1 month', $result));
+	 $tgl=date('Y-m-d',$result);
+	 $tahun=date("Y",strtotime($tgl));
+ 	 $tgl_=date("j",strtotime($tgl));
+ 	 $bulan=date("n",strtotime($tgl));
+	 $tgl_periode_nya='1 '.$nama_bulan_pendek[$bulan].' - '. $tgl_ .' '. $nama_bulan_pendek[$bulan] .' '. $tahun;
+	 return $tgl_periode_nya;
+}
 ?>

@@ -9,6 +9,9 @@
 		elseif ($page=="kinerja") {
 			include 'page/kinerja/m_kinerja.php';
 		}
+    elseif ($page=="profil") {
+			include 'page/profil/m_profil.php';
+		}
 		elseif ($page=="logout") {
 			include 'page/login/logout.php';
 		}

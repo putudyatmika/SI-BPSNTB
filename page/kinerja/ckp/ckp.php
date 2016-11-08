@@ -1,8 +1,10 @@
 <div class="col-lg-12 col-sm-12">
 				<a href="<?php echo $url; ?>/kinerja/ckp/add/" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></a>
 				<a href="<?php echo $url; ?>/kinerja/ckp/adds/" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></a>
-				<a href="<?php echo $url; ?>/kinerja/ckp/ckpt/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> List CKP-T</a>
-				<a href="<?php echo $url; ?>/kinerja/ckp/ckpr/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> List CKP-R</a>
+				<a href="<?php echo $url; ?>/kinerja/ckp/ckpt/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> CKP-T</a>
+				<a href="<?php echo $url; ?>/kinerja/ckp/ckpr/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> CKP-R</a>
+				<a href="<?php echo $url; ?>/kinerja/ckp/ckptstaf/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> CKP-T Staf</a>
+				<a href="<?php echo $url; ?>/kinerja/ckp/ckprstaf/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> CKP-R Staf</a>
 </div>
 
 <div class="col-lg-12 col-sm-12" style="margin-top:20px;">
@@ -28,8 +30,8 @@
 			elseif ($lvl3=='ckpt') {
 				include 'page/kinerja/ckp/ckp_t_list.php';
 			}
-			elseif ($lvl3=='satuan') {
-				include 'page/master/ckp/m_ckp_satuan.php';
+			elseif ($lvl3=='ckptstaf') {
+				include 'page/kinerja/ckp/ckp_t_staf_list.php';
 			}
 			else {
 				echo 'List CKP Bulan Berjalan';
