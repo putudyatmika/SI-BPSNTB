@@ -10,6 +10,7 @@ if ($_POST['ckp_t_submit']) {
 	$ckp_t_tahun = $_POST['ckp_t_tahun'];
 	$ckp_t_pegnip=$_SESSION['sesi_user_nip'];
 	$ckp_t_unitkode=$_SESSION['sesi_unitkode'];
+	$ckp_t_parent_kode=get_parent_kode($ckp_t_unitkode);
 	$ckp_t_edit=1;
 	$ckp_t_status=1;
 	$ckp_t_tipe=1;
@@ -25,7 +26,7 @@ if ($_POST['ckp_t_submit']) {
 	}
 	else {
 		 $sql_ckp_save = $conn -> query("insert into ckp_t(ckp_t_keg, ckp_t_satuan, ckp_t_target, ckp_t_ket, ckp_t_bulan, ckp_t_tahun, ckp_t_peg_jabatan, ckp_t_pegnip, ckp_t_unitkode, ckp_t_pegnip_s, ckp_t_unitkode_s, ckp_t_edit, ckp_t_status, ckp_t_tipe, ckp_t_tgl_dibuat, ckp_t_tgl_diupdate, ckp_t_dibuat_oleh, ckp_t_diupdate_oleh) values('$ckp_t_keg','$ckp_t_satuan','$ckp_t_target','$ckp_t_ket', '$ckp_t_bulan', '$ckp_t_tahun', '$ckp_t_peg_jabatan', '$ckp_t_pegnip', '$ckp_t_unitkode', '$ckp_t_pegnip', '$ckp_t_unitkode', '$ckp_t_edit', '$ckp_t_status','$ckp_t_tipe', '$waktu_lokal','$waktu_lokal', '$created', '$created')");
-
+		 $sql_ckp_kamus=$conn->query("insert into ckp_kamus(ckp_k_nama,ckp_k_unitkode,ckp_k_parent) values('$ckp_t_keg','$ckp_t_unitkode','$ckp_t_parent_kode')");
 		 if ($sql_ckp_save) echo 'SUCCESS : data CKP berhasil disimpan';
 		 else echo 'ERROR : data tidak bisa disimpan';
 	}

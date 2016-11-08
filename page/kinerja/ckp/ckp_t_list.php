@@ -50,8 +50,28 @@ $ckp_t_pegnip=$_SESSION['sesi_user_nip'];
 $sql_ckpt = $conn -> query("select * from ckp_t where ckp_t_pegnip='$ckp_t_pegnip' and ckp_t_bulan='$bln' and ckp_t_tahun='$thn'");
 $cek= $sql_ckpt -> num_rows;
 if ($cek > 0) {
+	$tgl_periode=tgl_periode_ckp($bln,$thn);
+	$sql_peg = $conn -> query("select * from m_pegawai where pegawai_nip='$ckp_t_pegnip'");
+	$p = $sql_peg ->fetch_object();
+	$nama_unit=get_nama_unit($p->pegawai_unit);
+	$parent_nama=get_parent_unit($p->pegawai_unit);
 ?>
-<legend>CKP-T Bulan <strong><?php echo $nama_bulan_panjang[$bln] .' '. $thn .' - '. $_SESSION['sesi_nama']; ?></strong> </legend>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Satuan organisasi</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $nama_unit; ?></div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Nama</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $_SESSION['sesi_nama']; ?></div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Jabatan</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $jabatanPegawai[$p->pegawai_jabatan] .' '. $nama_unit; ?></div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-sm-2">Periode</div>
+	<div class="col-lg-10 col-sm-2">: <?php echo $tgl_periode; ?></div>
+</div>
 <form name="formCKPCheck" id="formCKPCheck" action="<?php echo $url.'/'.$page.'/'.$act;?>/ckptcheck/" method="post">
 	<div class="dropdown">
 	  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih Menu

@@ -18,6 +18,9 @@ if ($cek>0) {
 	$tmtpns=tgl_convert_pendek(1,$r->pegawai_tmt_pns);
 	$namagol=get_pangkat_gol($r->pegawai_gol_pns);
 	$parent_nama=get_parent_unit($r->pegawai_unit);
+	$unit_eselon=get_eselon_unit($r->pegawai_unit);
+	if ($unit_eselon==2) $unit_pegawai=$nama_unit;
+	else $unit_pegawai=$nama_unit .' '. $parent_nama;
 	?>
 	<legend><strong><?php echo $r->pegawai_nama;?></strong> - <?php echo $parent_nama; ?></legend>
 	<div class="alert alert-info" role="alert">
@@ -35,7 +38,7 @@ if ($cek>0) {
 				<dt>Agama</dt>
 				<dd><?php echo $agama;?></dd>
 				<dt>Unit Kerja</dt>
-				<dd><?php echo $nama_unit;?></dd>
+				<dd><?php echo $unit_pegawai;?></dd>
 				<dt>Jabatan</dt>
 				<dd><?php echo $jabatanPegawai[$r->pegawai_jabatan] .' '. $nama_unit;?></dd>
 				<dt>TMT CPNS</dt>
