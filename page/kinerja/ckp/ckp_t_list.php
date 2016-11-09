@@ -84,15 +84,24 @@ if ($cek > 0) {
 	  </ul>
 	</div>
 <div class="table-responsive">
-<table class="table table-hover table-striped table-condensed">
+<table class="table table-hover table-striped table-condensed table-bordered">
 	<tr class="info">
 	<th><input type="checkbox" name="pilihsemua" id="pilihsemua"></th>
-	<th>#</th>
-	<th>Uraian Kegiatan</th>
-	<th>Satuan</th>
-	<th>Target</th>
-	<th>Status</th>
-	<th colspan="4">Aksi</th>
+	<th class="text-center">#</th>
+	<th class="text-center">Uraian Kegiatan</th>
+	<th class="text-center">Satuan</th>
+	<th class="text-center">Target</th>
+	<th class="text-center">Status</th>
+	<th colspan="4" class="text-center">Aksi</th>
+	</tr>
+	<tr class="info">
+	<th>&nbsp;</th>
+	<th class="text-center">(1)</th>
+	<th class="text-center">(2)</th>
+	<th class="text-center">(3)</th>
+	<th class="text-center">(4)</th>
+	<th class="text-center">(5)</th>
+	<th colspan="4" class="text-center">(6)</th>
 	</tr>
 	<?php
 	$c=1;

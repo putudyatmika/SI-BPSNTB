@@ -1,5 +1,5 @@
 	<legend>Tambah target CKP-T <strong><?php echo $_SESSION['sesi_nama'];?></strong></legend>
-		<form id="formAddCKP" name="formAddCKP" action="<?php echo $url.'/'.$page.'/'.$act;?>/save/"  method="post" class="form-horizontal well" role="form">
+		<form id="formAddCKP" name="formAddCKP" action="<?php echo $url.'/'.$page.'/'.$act;?>/save/"  method="post" class="form-horizontal well" role="form" autocomplete="off">
 		<fieldset>
 			<div class="form-group">
 			<label for="ckp_t_keg" class="col-sm-3 control-label">Uraian Kegiatan</label>
