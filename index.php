@@ -45,6 +45,7 @@ require ('header.php');
 require ('main.php');
 require ('footer.php');
 //untuk melihat url nya
+/*
 echo '
 	Segmen1 : '. $segmen1.' <br />
 	Segmen2 : '. $segmen2.' <br />
@@ -66,4 +67,5 @@ echo '<br />';
 echo 'URL asli : '.$_SERVER["REQUEST_URI"];
 echo '<br />Url DB : '.$url_db[2].'<br />URL server : '.$_SERVER['HTTP_HOST'];
 }
+*/
 ?>
