@@ -42,6 +42,23 @@
 				</div>
 		</div>
 		<div class="form-group">
+			<label for="ckp_t_tipe" class="col-sm-3 control-label">Tipe</label>
+				<div class="col-sm-4">
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+						<select class="form-control" name="ckp_t_tipe" id="ckp_t_tipe" style="font-family:'FontAwesome', Arial;">
+						<option value="">Pilih Tipe</option>
+						<?php
+						for ($i=1;$i<=2;$i++)
+							{
+								echo '<option value="'.$i.'">'.$ckpTipe[$i].'</option>';
+							}
+						?>
+						</select>
+					</div>
+				</div>
+		</div>
+		<div class="form-group">
 			<label for="ckp_t_bulan" class="col-sm-3 control-label">Bulan</label>
 				<div class="col-sm-4">
 					<div class="input-group margin-bottom-sm">

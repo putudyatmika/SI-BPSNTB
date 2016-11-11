@@ -47,7 +47,7 @@ if (isset($_POST['ckpt_list'])) {
 $db = new db();
 $conn = $db -> connect();
 $ckp_t_pegnip=$_SESSION['sesi_user_nip'];
-$sql_ckpt = $conn -> query("select * from ckp_t where ckp_t_pegnip='$ckp_t_pegnip' and ckp_t_bulan='$bln' and ckp_t_tahun='$thn'");
+$sql_ckpt = $conn -> query("select * from ckp_t where ckp_t_pegnip='$ckp_t_pegnip' and ckp_t_bulan='$bln' and ckp_t_tahun='$thn' and ckp_t_tipe='1' order by ckp_t_id asc");
 $cek= $sql_ckpt -> num_rows;
 if ($cek > 0) {
 	$tgl_periode=tgl_periode_ckp($bln,$thn);
@@ -103,6 +103,9 @@ if ($cek > 0) {
 	<th class="text-center">(5)</th>
 	<th colspan="4" class="text-center">(6)</th>
 	</tr>
+	<tr>
+		<td colspan="10"><strong>UTAMA</strong></td>
+	</tr>
 	<?php
 	$c=1;
 	while ($r = $sql_ckpt ->fetch_object()) {
@@ -125,6 +128,44 @@ if ($cek > 0) {
 		';
 		$c++;
 	}
+	$sql_ckpt_tmbh = $conn -> query("select * from ckp_t where ckp_t_pegnip='$ckp_t_pegnip' and ckp_t_bulan='$bln' and ckp_t_tahun='$thn' and ckp_t_tipe='2' order by ckp_t_id asc");
+	$cek2=$sql_ckpt_tmbh->num_rows;
+	echo '
+	<tr>
+	<td colspan="10"><strong>TAMBAHAN</strong></td>
+	</tr>
+	';
+	if ($cek2>0) {
+
+	$t=1;
+	while ($r2= $sql_ckpt_tmbh->fetch_object()) {
+		$ckp_satuan=get_nama_satuan($r2->ckp_t_satuan);
+		echo '
+		<tr>
+			<td><input type="checkbox" class="pilih" name="check[]" value="'.$r2->ckp_t_id.'"></td>
+			<td>'.$t.'</td>
+			<td>'.$r2->ckp_t_keg.'</td>
+			<td>'.$ckp_satuan.'</td>
+			<td>'.$r2->ckp_t_target.'</td>
+			<td>'.$ckpStatus[$r2->ckp_t_status].'</td>
+			<td><a href="'.$url.'/'.$page.'/'.$act.'/ajukan/'.$r2->ckp_t_id.'"><i class="fa fa-check text-primary" aria-hidden="true"></i></a></td>
+			<td><a href="'.$url.'/'.$page.'/'.$act.'/view/'.$r2->ckp_t_id.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
+			<td><a href="'.$url.'/'.$page.'/'.$act.'/edit/'.$r2->ckp_t_id.'"><i class="fa fa-pencil-square text-info" aria-hidden="true"></i></a></td>
+			<td><a href="'.$url.'/'.$page.'/'.$act.'/delete/'.$r2->ckp_t_id.'" data-confirm="Apakah data '.$r2->ckp_t_keg.' ini akan di hapus?"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a></td>
+		</tr>
+		';
+		$c++;
+	}
+}
+else {
+	echo '
+<tr>
+<td>&nbsp;</td>
+	<td>1</td>
+	<td colspan="8"></td>
+	</tr>
+';
+}
 	?>
 </table>
 	</div>

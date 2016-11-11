@@ -21,6 +21,7 @@ if ($cek>0) {
 	$unit_eselon=get_eselon_unit($r->pegawai_unit);
 	if ($unit_eselon==2) $unit_pegawai=$nama_unit;
 	else $unit_pegawai=$nama_unit .' '. $parent_nama;
+	$nip_atasan=get_nip_atasan($r->pegawai_unit,$r->pegawai_jabatan);
 	?>
 	<legend><strong><?php echo $r->pegawai_nama;?></strong> - <?php echo $parent_nama; ?></legend>
 	<div class="alert alert-info" role="alert">
@@ -41,6 +42,8 @@ if ($cek>0) {
 				<dd><?php echo $unit_pegawai;?></dd>
 				<dt>Jabatan</dt>
 				<dd><?php echo $jabatanPegawai[$r->pegawai_jabatan] .' '. $nama_unit;?></dd>
+				<dt>Atasan</dt>
+				<dd><?php echo $nip_atasan;?></dd>
 				<dt>TMT CPNS</dt>
 				<dd><?php echo $tmtcpns;?></dd>
 				<dt>TMT PNS</dt>
