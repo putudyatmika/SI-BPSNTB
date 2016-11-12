@@ -31,13 +31,12 @@
 							<?php
 							$bln=date('n');
 							$thn=date(Y);
-
 							for ($i=1;$i<=12;$i++)
 								{
-									$tgl_periode=tgl_periode_ckp($i,$thn);
+									//$tgl_periode=tgl_periode_ckp($i,$thn);
 									if ($bln==$i) $pilih='selected="selected"';
 									else $pilih='';
-									echo '<option value="'.$i.'" '.$pilih.'>'.$tgl_periode.'</option>';
+									echo '<option value="'.$i.'" '.$pilih.'>'.$nama_bulan_panjang[$i].'</option>';
 								}
 							?>
 							</select>

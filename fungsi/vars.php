@@ -26,5 +26,5 @@ $unit_eselon=array(1=>'I',2=>'II',3=>'III',4=>'IV');
 $ckpTipe=array(1=>'Utama',2=>'Tambahan');
 $ckpEdit=array(1=>'Terbuka',2=>'Terkunci');
 $ckpStatus=array(1=>'Draft',2=>'Diajukan',3=>'Disetujui',4=>'Ditolak');
-$ckpStatDok=array(1=>'Belum dientri',2=>'Pelaksana',3=>'Atasan',4=>'Sudah diproses')
+$ckpStatDok=array(0=>'Belum dientri',1=>'Pelaksana',2=>'Atasan',3=>'Sudah diproses')
 ?>
