@@ -6,12 +6,29 @@
 					<span class="caret"></span></button>
 					<ul class="dropdown-menu">
 						<li><a href="<?php echo $url; ?>/kinerja/ckp/ckpt/"><i class="fa fa-server" aria-hidden="true"></i> Pribadi</a></li>
+						<?php
+						if ($_SESSION['sesi_level']>9) {
+						echo '
 						<li class="divider"></li>
-						<li><a href="<?php echo $url; ?>/kinerja/ckp/ckptstaf/"><i class="fa fa-server text-danger" aria-hidden="true"></i> Staf</a></li>
+						<li><a href="'.$url.'/kinerja/ckp/ckptstaf/"><i class="fa fa-server text-danger" aria-hidden="true"></i> Staf</a></li>';
+						}
+						?>
 					</ul>
 				</span>
-				<a href="<?php echo $url; ?>/kinerja/ckp/ckpr/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> CKP-R</a>
-			  <a href="<?php echo $url; ?>/kinerja/ckp/ckprstaf/" class="btn btn-info"><i class="fa fa-server" aria-hidden="true"></i> CKP-R Staf</a>
+				<span class="dropdown">
+					<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">CKP-R
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="<?php echo $url; ?>/kinerja/ckp/ckpr/"><i class="fa fa-server" aria-hidden="true"></i> Pribadi</a></li>
+						<?php
+						if ($_SESSION['sesi_level']>9) {
+						echo '
+						<li class="divider"></li>
+						<li><a href="'.$url.'/kinerja/ckp/ckprstaf/"><i class="fa fa-server text-danger" aria-hidden="true"></i> Staf</a></li>';
+						}
+						?>
+					</ul>
+				</span>
 </div>
 
 <div class="col-lg-12 col-sm-12" style="margin-top:20px;">
@@ -40,7 +57,7 @@
 			elseif ($lvl3=='ckpt') {
 				include 'page/kinerja/ckp/ckp_t_list.php';
 			}
-			elseif ($lvl3=='ckptstaf') {
+			elseif ($lvl3=='ckptstaf' and $_SESSION['sesi_level']>9) {
 				include 'page/kinerja/ckp/ckp_t_staf_list.php';
 			}
 			elseif ($lvl3=='ckptcheck') {

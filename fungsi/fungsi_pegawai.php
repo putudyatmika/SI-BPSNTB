@@ -16,6 +16,40 @@ function get_jabatan_nip($pegawai_nip) {
 	return $peg_jab;
 	$conn_users->close();
 	}
+	function get_nama_nip($pegawai_nip) {
+		//(user_id) kode_jabtan
+		$db_users = new db();
+		$conn_users = $db_users->connect();
+		$sql_users = $conn_users -> query("select * from m_pegawai where pegawai_nip='".$pegawai_nip."'");
+		$cek=$sql_users->num_rows;
+		if ($cek>0) {
+		   $peg_jab='';
+		   $r=$sql_users->fetch_object();
+		   $peg_nama=$r->pegawai_nama;
+		}
+		else {
+		 $peg_nama='';
+		}
+		return $peg_nama;
+		$conn_users->close();
+	}
+	function get_unitkode_nip($pegawai_nip) {
+		//(user_id) kode_jabtan
+		$db_users = new db();
+		$conn_users = $db_users->connect();
+		$sql_users = $conn_users -> query("select * from m_pegawai where pegawai_nip='".$pegawai_nip."'");
+		$cek=$sql_users->num_rows;
+		if ($cek>0) {
+		   $peg_jab='';
+		   $r=$sql_users->fetch_object();
+		   $peg_unit=$r->pegawai_unit;
+		}
+		else {
+		 $peg_unit='';
+		}
+		return $peg_unit;
+		$conn_users->close();
+	}
 	function get_pangkat_gol($kodegol) {
 		$db_gol = new db();
 		$conn_gol = $db_gol->connect();

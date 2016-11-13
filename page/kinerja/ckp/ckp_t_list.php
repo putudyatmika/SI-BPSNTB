@@ -139,7 +139,7 @@ if ($cek > 0) {
 			<td>'.$r->ckp_t_keg.'</td>
 			<td>'.$ckp_satuan.'</td>
 			<td>'.$r->ckp_t_target.'</td>
-			<td>'.$ckpStatus[$r->ckp_t_status].'</td>
+			<td>'.$ckpStatus[$r->ckp_t_status].' - <strong>['.$ckpStatDok[$r->ckp_t_status_dok].']</strong></td>
 			<td>'.$stat_box.'</td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/viewckpt/'.$r->ckp_t_id.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
 			<td>'.$edit_box.'</td>
@@ -186,7 +186,7 @@ if ($cek > 0) {
 			<td>'.$r2->ckp_t_keg.'</td>
 			<td>'.$ckp_satuan.'</td>
 			<td>'.$r2->ckp_t_target.'</td>
-			<td>'.$ckpStatus[$r2->ckp_t_status].'</td>
+			<td>'.$ckpStatus[$r2->ckp_t_status].' - <strong>['.$ckpStatDok[$r2->ckp_t_status_dok].']</strong></td>
 			<td>'.$stat_box.'</td>
 			<td><a href="'.$url.'/'.$page.'/'.$act.'/viewckpt/'.$r2->ckp_t_id.'"><i class="fa fa-search text-success" aria-hidden="true"></i></a></td>
 			<td>'.$edit_box.'</td>
